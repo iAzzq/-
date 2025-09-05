@@ -90,7 +90,13 @@ IF TRUE THEN
 	END_IF;
 	END_FOR;
 	
-	
-	
 END_IF;
 
+(*---------------轴使能------------------*)
+IF CM_b轴使能 THEN
+ FOR i :=0 TO Main_i轴数量-1 BY 1 DO
+			ast轴[i].i使能Cmd :=3;
+		END_FOR;
+	; 
+END_IF;
+	   
