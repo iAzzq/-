@@ -1,0 +1,342 @@
+//Fast气缸_C_1(IO_st气缸  := ast气缸[1]);
+
+IF TRUE THEN
+Fast气缸_C_1(IO_st气缸  := ast气缸[1]);
+Fast气缸_C_2(IO_st气缸  := ast气缸[2]);
+Fast气缸_C_3(IO_st气缸  := ast气缸[3]);
+Fast气缸_C_4(IO_st气缸  := ast气缸[4]);
+Fast气缸_C_5(IO_st气缸  := ast气缸[5]);
+Fast气缸_C_6(IO_st气缸  := ast气缸[6]);
+Fast气缸_C_7(IO_st气缸  := ast气缸[7]);
+Fast气缸_C_8(IO_st气缸  := ast气缸[8]);
+Fast气缸_C_9(IO_st气缸  := ast气缸[9]);
+Fast气缸_C_10(IO_st气缸 := ast气缸[10]);
+Fast气缸_C_11(IO_st气缸 := ast气缸[11]);
+Fast气缸_C_12(IO_st气缸 := ast气缸[12]);
+Fast气缸_C_13(IO_st气缸 := ast气缸[13]);
+Fast气缸_C_14(IO_st气缸 := ast气缸[14]);
+Fast气缸_C_15(IO_st气缸 := ast气缸[15]);
+Fast气缸_C_16(IO_st气缸 := ast气缸[16]);
+Fast气缸_C_17(IO_st气缸 := ast气缸[17]);
+Fast气缸_C_18(IO_st气缸 := ast气缸[18]);
+Fast气缸_C_19(IO_st气缸 := ast气缸[19]);
+Fast气缸_C_20(IO_st气缸 := ast气缸[20]);
+Fast气缸_C_21(IO_st气缸 := ast气缸[21]);
+Fast气缸_C_22(IO_st气缸 := ast气缸[22]);
+Fast气缸_C_23(IO_st气缸 := ast气缸[23]);
+Fast气缸_C_24(IO_st气缸 := ast气缸[24]);
+Fast气缸_C_25(IO_st气缸 := ast气缸[25]);
+Fast气缸_C_26(IO_st气缸 := ast气缸[26]);
+Fast气缸_C_27(IO_st气缸 := ast气缸[27]);
+Fast气缸_C_28(IO_st气缸 := ast气缸[28]);
+Fast气缸_C_29(IO_st气缸 := ast气缸[29]);
+Fast气缸_C_30(IO_st气缸 := ast气缸[30]);
+	; 
+ELSE
+	; 
+END_IF;
+
+//Fast轴_C_1(IO_st轴 := ast轴[1], IO_sys轴 := AXIS_1);
+IF TRUE THEN
+Fast轴_C_1(IO_st轴 := ast轴[1], IO_sys轴 := AXIS_1);
+Fast轴_C_2(IO_st轴 := ast轴[2], IO_sys轴 := AXIS_2);
+Fast轴_C_3(IO_st轴 := ast轴[3], IO_sys轴 := AXIS_3);
+Fast轴_C_4(IO_st轴 := ast轴[4], IO_sys轴 := AXIS_4);
+Fast轴_C_5(IO_st轴 := ast轴[5], IO_sys轴 := AXIS_5);
+Fast轴_C_6(IO_st轴 := ast轴[6], IO_sys轴 := AXIS_6);
+Fast轴_C_7(IO_st轴 := ast轴[7], IO_sys轴 := AXIS_7);
+Fast轴_C_8(IO_st轴 := ast轴[8], IO_sys轴 := AXIS_8);
+Fast轴_C_9(IO_st轴 := ast轴[9], IO_sys轴 := AXIS_9);
+Fast轴_C_10(IO_st轴 := ast轴[10], IO_sys轴 := AXIS_10);
+	; 
+ELSE
+	; 
+END_IF;
+
+//FP_C_1(InStep := PP[1]);
+IF TRUE THEN
+
+//PP1
+FP_C_1.RunFlag := not b暂停;
+FP_C_1(InStep := PP[1]);
+
+//PP2
+FP_C_2.RunFlag := not b暂停;
+FP_C_2(InStep := PP[2]);
+
+//PP3
+FP_C_3.RunFlag := not b暂停;
+FP_C_3(InStep := PP[3]);
+
+//PP4
+FP_C_4.RunFlag := not b暂停;
+FP_C_4(InStep := PP[4]);
+
+//PP5
+FP_C_5.RunFlag := not b暂停;
+FP_C_5(InStep := PP[5]);
+
+//PP6
+FP_C_6.RunFlag := not b暂停;
+FP_C_6(InStep := PP[6]);
+
+//PP7
+FP_C_7.RunFlag := not b暂停;
+FP_C_7(InStep := PP[7]);
+
+//PP8
+FP_C_8.RunFlag := not b暂停;
+FP_C_8(InStep := PP[8]);
+
+//PP9
+FP_C_9.RunFlag := not b暂停;
+FP_C_9(InStep := PP[9]);
+
+//PP10
+FP_C_10.RunFlag := not b暂停;
+FP_C_10(InStep := PP[10]);
+
+//PP11
+FP_C_11.RunFlag := not b暂停;
+FP_C_11(InStep := PP[11]);
+
+//PP12
+FP_C_12.RunFlag := not b暂停;
+FP_C_12(InStep := PP[12]);
+
+//PP13
+FP_C_13.RunFlag := not b暂停;
+FP_C_13(InStep := PP[13]);
+
+//PP14
+FP_C_14.RunFlag := not b暂停;
+FP_C_14(InStep := PP[14]);
+
+//PP15
+FP_C_15.RunFlag := not b暂停;
+FP_C_15(InStep := PP[15]);
+
+//PP16
+FP_C_16.RunFlag := not b暂停;
+FP_C_16(InStep := PP[16]);
+
+//PP17
+FP_C_17.RunFlag := not b暂停;
+FP_C_17(InStep := PP[17]);
+
+//PP18
+FP_C_18.RunFlag := not b暂停;
+FP_C_18(InStep := PP[18]);
+
+//PP19
+FP_C_19.RunFlag := not b暂停;
+FP_C_19(InStep := PP[19]);
+
+//PP20
+FP_C_20.RunFlag := not b暂停;
+FP_C_20(InStep := PP[20]);
+
+//PP21
+FP_C_21.RunFlag := not b暂停;
+FP_C_21(InStep := PP[21]);
+
+//PP22
+FP_C_22.RunFlag := not b暂停;
+FP_C_22(InStep := PP[22]);
+
+//PP23
+FP_C_23.RunFlag := not b暂停;
+FP_C_23(InStep := PP[23]);
+
+//PP24
+FP_C_24.RunFlag := not b暂停;
+FP_C_24(InStep := PP[24]);
+
+//PP25
+FP_C_25.RunFlag := not b暂停;
+FP_C_25(InStep := PP[25]);
+
+//PP26
+FP_C_26.RunFlag := not b暂停;
+FP_C_26(InStep := PP[26]);
+
+//PP27
+FP_C_27.RunFlag := not b暂停;
+FP_C_27(InStep := PP[27]);
+
+//PP28
+FP_C_28.RunFlag := not b暂停;
+FP_C_28(InStep := PP[28]);
+
+//PP29
+FP_C_29.RunFlag := not b暂停;
+FP_C_29(InStep := PP[29]);
+
+//PP30
+FP_C_30.RunFlag := not b暂停;
+FP_C_30(InStep := PP[30]);
+
+//PP31
+FP_C_31.RunFlag := not b暂停;
+FP_C_31(InStep := PP[31]);
+
+//PP32
+FP_C_32.RunFlag := not b暂停;
+FP_C_32(InStep := PP[32]);
+
+//PP33
+FP_C_33.RunFlag := not b暂停;
+FP_C_33(InStep := PP[33]);
+
+//PP34
+FP_C_34.RunFlag := not b暂停;
+FP_C_34(InStep := PP[34]);
+
+//PP35
+FP_C_35.RunFlag := not b暂停;
+FP_C_35(InStep := PP[35]);
+
+//PP36
+FP_C_36.RunFlag := not b暂停;
+FP_C_36(InStep := PP[36]);
+
+//PP37
+FP_C_37.RunFlag := not b暂停;
+FP_C_37(InStep := PP[37]);
+
+//PP38
+FP_C_38.RunFlag := not b暂停;
+FP_C_38(InStep := PP[38]);
+
+//PP39
+FP_C_39.RunFlag := not b暂停;
+FP_C_39(InStep := PP[39]);
+
+//PP40
+FP_C_40.RunFlag := not b暂停;
+FP_C_40(InStep := PP[40]);
+
+//PP41
+FP_C_41.RunFlag := not b暂停;
+FP_C_41(InStep := PP[41]);
+
+//PP42
+FP_C_42.RunFlag := not b暂停;
+FP_C_42(InStep := PP[42]);
+
+//PP43
+FP_C_43.RunFlag := not b暂停;
+FP_C_43(InStep := PP[43]);
+
+//PP44
+FP_C_44.RunFlag := not b暂停;
+FP_C_44(InStep := PP[44]);
+
+//PP45
+FP_C_45.RunFlag := not b暂停;
+FP_C_45(InStep := PP[45]);
+
+//PP46
+FP_C_46.RunFlag := not b暂停;
+FP_C_46(InStep := PP[46]);
+
+//PP47
+FP_C_47.RunFlag := not b暂停;
+FP_C_47(InStep := PP[47]);
+
+//PP48
+FP_C_48.RunFlag := not b暂停;
+FP_C_48(InStep := PP[48]);
+
+//PP49
+FP_C_49.RunFlag := not b暂停;
+FP_C_49(InStep := PP[49]);
+
+//PP50
+FP_C_50.RunFlag := not b暂停;
+FP_C_50(InStep := PP[50]);
+
+//PP51
+FP_C_51.RunFlag := not b暂停;
+FP_C_51(InStep := PP[51]);
+
+//PP52
+FP_C_52.RunFlag := not b暂停;
+FP_C_52(InStep := PP[52]);
+
+//PP53
+FP_C_53.RunFlag := not b暂停;
+FP_C_53(InStep := PP[53]);
+
+//PP54
+FP_C_54.RunFlag := not b暂停;
+FP_C_54(InStep := PP[54]);
+
+//PP55
+FP_C_55.RunFlag := not b暂停;
+FP_C_55(InStep := PP[55]);
+
+//PP56
+FP_C_56.RunFlag := not b暂停;
+FP_C_56(InStep := PP[56]);
+
+//PP57
+FP_C_57.RunFlag := not b暂停;
+FP_C_57(InStep := PP[57]);
+
+//PP58
+FP_C_58.RunFlag := not b暂停;
+FP_C_58(InStep := PP[58]);
+
+//PP59
+FP_C_59.RunFlag := not b暂停;
+FP_C_59(InStep := PP[59]);
+
+//PP60
+FP_C_60.RunFlag := not b暂停;
+FP_C_60(InStep := PP[60]);
+
+//PP61
+FP_C_61.RunFlag := not b暂停;
+FP_C_61(InStep := PP[61]);
+
+//PP62
+FP_C_62.RunFlag := not b暂停;
+FP_C_62(InStep := PP[62]);
+
+//PP63
+FP_C_63.RunFlag := not b暂停;
+FP_C_63(InStep := PP[63]);
+
+//PP64
+FP_C_64.RunFlag := not b暂停;
+FP_C_64(InStep := PP[64]);
+
+//PP65
+FP_C_65.RunFlag := not b暂停;
+FP_C_65(InStep := PP[65]);
+
+//PP66
+FP_C_66.RunFlag := not b暂停;
+FP_C_66(InStep := PP[66]);
+
+//PP67
+FP_C_67.RunFlag := not b暂停;
+FP_C_67(InStep := PP[67]);
+
+//PP68
+FP_C_68.RunFlag := not b暂停;
+FP_C_68(InStep := PP[68]);
+
+//PP69
+FP_C_69.RunFlag := not b暂停;
+FP_C_69(InStep := PP[69]);
+(*
+//PP70
+FP_C_70.RunFlag := not b暂停;
+FP_C_70(InStep := PP[70]);*)
+	; 
+ELSE
+	; 
+END_IF;
+
