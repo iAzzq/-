@@ -1,0 +1,80 @@
+//配置参数
+Main_i机构数量:=6;
+Main_i轴数量  :=3;
+Main_i气缸数量:=13;
+
+
+
+(*---------------气缸初始化b动点信号------------------*)
+IF CM_b初始化 THEN
+	FOR i :=0 TO Main_i气缸数量-1 BY 1 DO
+		ast气缸[i].b动点信号:=FALSE;
+		ast气缸[i].b原点信号:=FALSE;
+		ast气缸[i].b急停    :=FALSE;
+		ast气缸[i].b暂停    :=FALSE;
+		ast气缸[i].b复位    :=FALSE;
+		ast气缸[i].b手动    :=FALSE;
+		ast气缸[i].b自动    :=FALSE;
+		ast气缸[i].i命令    :=0;
+	END_FOR;
+END_IF;
+
+
+(*---------------轴初始化i使能Cmd------------------*)
+IF CM_b初始化 THEN
+	FOR i :=0 TO Main_i轴数量-1 BY 1 DO
+		ast轴[i].i使能Cmd    :=0;
+		ast轴[i].b复位Ext    :=FALSE;
+		ast轴[i].i停止Cmd    :=0;
+		ast轴[i].b急停       :=FALSE;
+		ast轴[i].b手动点动正 :=FALSE;
+		ast轴[i].b手动点动负 :=FALSE;
+		ast轴[i].b自动点动正 :=FALSE;
+		ast轴[i].b自动点动负 :=FALSE;
+		ast轴[i].i回原Cmd    :=0;
+		ast轴[i].b暂停中     :=FALSE;
+		ast轴[i].i暂停复位Cmd:=0;
+		ast轴[i].b手动       :=FALSE;
+		ast轴[i].b自动       :=FALSE;
+	END_FOR;  
+END_IF;
+
+
+(*---------------轴r停止速度初始化------------------*)
+IF CM_b初始默认NUM THEN
+	FOR i :=0 TO Main_i轴数量-1 BY 1 DO
+		ast轴[i].st配置.r停止速度    :=1000;
+		ast轴[i].st配置.r急停速度    :=1000;
+		ast轴[i].st配置.b软限位En    :=FALSE;
+		ast轴[i].st配置.r加速度      :=500;
+		ast轴[i].st配置.r减速度      :=500;
+		ast轴[i].st配置.r回原偏移    :=0;
+	END_FOR;  
+END_IF;
+
+(*---------------气缸初始化di动点延时------------------*)
+IF CM_b初始默认NUM THEN
+	FOR i :=0 TO Main_i气缸数量-1 BY 1 DO
+	
+		
+		ast气缸[i].di动点延时    :=500;
+		ast气缸[i].di原点延时    :=500;
+		ast气缸[i].di动点超时    :=1500;
+		ast气缸[i].di原点超时    :=1500;
+	END_FOR;
+END_IF;
+
+(*---------------轴初始化ast定位[i].r速度------------------*)
+IF CM_b初始默认NUM THEN
+		
+FOR i :=0 TO 19 BY 1 DO
+	ast轴[1].ast定位[i].i命令    :=0;
+	ast轴[1].ast定位[i].r速度    :=50;
+	ast轴[1].ast定位[i].r加速度    :=50;
+	ast轴[1].ast定位[i].r减速度    :=50;
+	; 
+END_FOR;
+	; 
+END_IF;
+
+
