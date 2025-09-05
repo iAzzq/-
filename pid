@@ -1,6 +1,17 @@
+VAR
 
+pv: REAL;
+sv: REAL;
+KP: REAL;
+KI: REAL;
+KD: REAL;
+END_VAR
 
-
+VAR
+out: REAL;
+m_ek: REAL;
+m_ek1: REAL;
+m_ek2: REAL;
 m_sum: REAL;
 END_VAR
 
