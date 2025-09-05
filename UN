@@ -1,0 +1,90 @@
+
+
+(*--------------------------------UN_b手动模式中---------------------------------*)
+IF TRUE THEN
+
+UN_b手动模式中:=FALSE;
+UN_b自动模式中:=FALSE;
+UN_b维修模式中:=FALSE;
+UN_b巡检模式中:=FALSE;
+
+CASE UN_i系统模式 OF
+    (*手动*)
+	0:
+	   UN_b手动模式中:=true;
+	(*自动*)
+    1:
+	   UN_b自动模式中:=true;
+	(*维修*)
+	2:
+	   UN_b维修模式中:=true;
+	(*巡检*)
+	3:
+	   UN_b巡检模式中:=true;
+END_CASE;
+
+
+
+UN_b连续模式中:=FALSE;
+UN_b单动模式中:=FALSE;
+
+CASE UN_i运行模式 OF
+    (*连续*)
+	0:
+	   UN_b连续模式中:=TRUE;
+	(*单动*)
+	1:
+	   UN_b单动模式中:=TRUE;
+END_CASE;
+
+	; 
+END_IF;
+
+(*--------------------------------UN_b自动运行中---------------------------------*)
+IF TRUE THEN
+UN_b运行条件:=  UN_b自动模式中
+            and not UN_b设备报警中
+			and Main_b上电处理Done
+			and UN_b全部轴已使能
+			and UN_b全部机构就绪;
+//启动相关的控制
+UN_rtrig启动(CLK :=UN_b启动按钮);
+
+IF UN_rtrig启动.Q and UN_b运行条件 THEN
+   UN_b自动运行中:=TRUE;
+END_IF;
+//停止相关的控制
+
+UN_rtrig停止(CLK :=UN_b停止Btn);
+
+IF UN_rtrig停止.Q and UN_b自动运行中 THEN
+   UN_b自动停止中:=TRUE; 
+   UN_b自动运行中:=FALSE;
+   UN_i停止中Step:=10;
+END_IF;
+
+//暂停相关的控制
+
+UN_rtrig暂停(CLK :=UN_b暂停Btn);
+
+IF UN_rtrig暂停.Q and UN_b自动运行中 THEN
+    UN_b自动暂停中:=TRUE;
+	UN_b自动运行中:=FALSE;
+	UN_i暂停Step:=10;
+END_IF;
+
+UN_rtrig整机初始化(CLK :=UN_b整机初始化Btn);
+//INIT相关的控制
+IF UN_rtrig整机初始化.Q THEN
+	UN_b自动停止中:=TRUE; 
+	UN_b自动运行中:=FALSE;
+	UN_i整机初始化Step:=10; 
+	 
+END_IF;
+
+
+
+	; 
+END_IF;
+
+
