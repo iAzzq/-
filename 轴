@@ -1,0 +1,72 @@
+//轴1
+IF TRUE THEN
+
+ast轴[1].st配置.i类型        :=1;   //伺服脉冲轴
+ast轴[1].st配置.s名称        :='轴1';
+ast轴[1].st配置.r回原偏移Vel :=100;
+ast轴[1].st配置.r回原偏移Acc :=200;
+ast轴[1].st配置.r回原偏移Dec :=200;
+ast轴[1].b急停               :=b急停;
+ast轴[1].b暂停中             :=b暂停;
+ast轴[1].b复位Ext            :=b复位;
+ast轴[1].b手动               :=UN_b手动模式中;
+ast轴[1].b自动               :=UN_b自动模式中;
+ast轴[1].b运动条件           :=TRUE;
+
+    ; 
+END_IF;                    
+
+
+//轴2
+IF TRUE THEN
+
+ast轴[2].st配置.i类型        :=1;   //伺服脉冲轴
+ast轴[2].st配置.s名称        :='轴2';
+ast轴[2].st配置.r回原偏移Vel :=100;
+ast轴[2].st配置.r回原偏移Acc :=200;
+ast轴[2].st配置.r回原偏移Dec :=200;
+ast轴[2].b急停               :=b急停;
+ast轴[2].b暂停中             :=b暂停;
+ast轴[2].b复位Ext            :=b复位;
+ast轴[2].b手动               :=UN_b手动模式中;
+ast轴[2].b自动               :=UN_b自动模式中;
+ast轴[2].b运动条件           :=TRUE;
+
+    ; 
+END_IF;
+
+//轴3
+IF TRUE THEN
+
+ast轴[3].st配置.i类型        :=1;   //伺服脉冲轴
+ast轴[3].st配置.s名称        :='轴3';
+ast轴[3].st配置.r回原偏移Vel :=100;
+ast轴[3].st配置.r回原偏移Acc :=200;
+ast轴[3].st配置.r回原偏移Dec :=200;
+ast轴[3].b急停               :=b急停;
+ast轴[3].b暂停中             :=b暂停;
+ast轴[3].b复位Ext            :=b复位;
+ast轴[3].b手动               :=UN_b手动模式中;
+ast轴[3].b自动               :=UN_b自动模式中;
+ast轴[3].b运动条件           :=TRUE;
+
+    ; 
+END_IF;
+
+//轴4
+IF TRUE THEN
+
+ast轴[4].st配置.i类型        :=1;   //伺服脉冲轴
+ast轴[4].st配置.s名称        :='轴4';
+ast轴[4].st配置.r回原偏移Vel :=100;
+ast轴[4].st配置.r回原偏移Acc :=200;
+ast轴[4].st配置.r回原偏移Dec :=200;
+ast轴[4].b急停               :=b急停;
+ast轴[4].b暂停中             :=b暂停;
+ast轴[4].b复位Ext            :=b复位;
+ast轴[4].b手动               :=UN_b手动模式中;
+ast轴[4].b自动               :=UN_b自动模式中;
+ast轴[4].b运动条件           :=TRUE;
+
+    ; 
+END_IF;
