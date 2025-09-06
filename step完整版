@@ -1,0 +1,975 @@
+// ==================== PP[1] ====================
+// PP[1] - 系统初始化功能块
+// 步骤说明 (步号按10的倍数递增):
+//   10: 初始化所有stepno (原1)
+//   20: 轴使能 (原2)
+//   30: 初始化所有机构 (原3)
+//   40: 转盘初始化 (原4)
+//   1000: 最终完成步
+//   0: idle状态
+
+cmd初始化所有stepno := FALSE;
+cmd轴使能 := FALSE;
+cmd初始化所有机构 := FALSE;
+cmd转盘初始化 := FALSE;
+FCO_START[1] := FALSE;
+
+CASE PP[1].StepNo OF
+    0:  // idle状态
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 0;
+        PP[1].Condition := FALSE;
+        
+        IF CMD_START[1] THEN
+            PP[1].NextStepNo := 10;
+            PP[1].Condition := TRUE;
+        END_IF;
+        
+    10: // 初始化所有stepno (原1→10)
+        astEM[0].s流程显示:='PP[1].初始化所有stepno';
+        cmd初始化所有stepno := TRUE;
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 20;
+        PP[1].Condition := fco初始化所有stepno;
+        
+    20: // 轴使能 (原2→20)
+        astEM[0].s流程显示:='PP[1].轴使能';
+        cmd轴使能 := TRUE;
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 30;
+        PP[1].Condition := fco轴使能;
+        
+    30: // 初始化所有机构 (原3→30)
+        astEM[0].s流程显示:='PP[1].初始化所有机构';
+        cmd初始化所有机构 := TRUE;
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 40;
+        PP[1].Condition := fco初始化所有机构;
+        
+    40: // 转盘初始化 (原4→40)
+        astEM[0].s流程显示:='PP[1].转盘初始化';
+        cmd转盘初始化 := TRUE;
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 1000;
+        PP[1].Condition := fco转盘初始化;
+        
+    1000: // 最终完成步
+        astEM[0].s流程显示:='PP[1].最终完成步';
+        FCO_START[1] := TRUE;
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 0;
+        PP[1].Condition := NOT CMD_START[1];
+END_CASE;
+
+// ==================== PP[2] ====================
+// PP[2] - 系统启动功能块
+// 步骤说明 (步号按10的倍数递增):
+//   10: 所有机构启动 (原1)
+//   20: 转盘旋转 (原2)
+//   30: 传递数据 (原3)
+//   40: 完成 (原4)
+//   1000: 最终完成步
+//   0: idle状态
+
+cmd所有机构启动 := FALSE;
+cmd转盘旋转 := FALSE;
+cmd传递数据 := FALSE;
+cmd完成 := FALSE;
+FCO_START[2] := FALSE;
+
+CASE PP[2].StepNo OF
+    0:  // idle状态
+        PP[2].DelayTime := 100;
+        PP[2].NextStepNo := 0;
+        PP[2].Condition := FALSE;
+        
+        IF CMD_START[2] THEN
+            PP[2].NextStepNo := 10;
+            PP[2].Condition := TRUE;
+        END_IF;
+        
+    10: // 所有机构启动 (原1→10)
+        astEM[0].s流程显示:='PP[2].所有机构启动';
+        cmd所有机构启动 := TRUE;
+        PP[2].DelayTime := 100;
+        PP[2].NextStepNo := 20;
+        PP[2].Condition := fco所有机构启动;
+        
+    20: // 转盘旋转 (原2→20)
+        astEM[0].s流程显示:='PP[2].转盘旋转';
+        cmd转盘旋转 := TRUE;
+        PP[2].DelayTime := 100;
+        PP[2].NextStepNo := 30;
+        PP[2].Condition := fco转盘旋转;
+        
+    30: // 传递数据 (原3→30)
+        astEM[0].s流程显示:='PP[2].传递数据';
+        cmd传递数据 := TRUE;
+        PP[2].DelayTime := 100;
+        PP[2].NextStepNo := 40;
+        PP[2].Condition := fco传递数据;
+        
+    40: // 完成 (原4→40)
+        astEM[0].s流程显示:='PP[2].完成';
+        cmd完成 := TRUE;
+        PP[2].DelayTime := 100;
+        PP[2].NextStepNo := 1000;
+        PP[2].Condition := fco完成;
+        
+    1000: // 最终完成步
+        astEM[0].s流程显示:='PP[2].最终完成步';
+        FCO_START[2] := TRUE;
+        PP[2].DelayTime := 100;
+        PP[2].NextStepNo := 0;
+        PP[2].Condition := NOT CMD_START[2];
+END_CASE;
+
+// ==================== PP[10] ====================
+// PP[10] - 输送带停止控制功能块
+// 步骤说明 (步号按10的倍数递增):
+//   10: 输送带停止 (原1)
+//   20: 推料到原点中 (原2)
+//   30: 流程就绪中 (原3)
+//   1000: 最终完成步
+//   0: idle状态
+
+cmd输送带停止 := FALSE;
+cmd推料到原点中 := FALSE;
+cmd流程就绪中 := FALSE;
+FCO_START[10] := FALSE;
+
+CASE PP[10].StepNo OF
+    0:  // idle状态
+        PP[10].DelayTime := 100;
+        PP[10].NextStepNo := 0;
+        PP[10].Condition := FALSE;
+        
+        IF CMD_START[10] THEN
+            PP[10].NextStepNo := 10;
+            PP[10].Condition := TRUE;
+        END_IF;
+        
+    10: // 输送带停止 (原1→10)
+        astEM[1].s流程显示:='PP[10].输送带停止';
+        cmd输送带停止 := TRUE;
+        PP[10].DelayTime := 100;
+        PP[10].NextStepNo := 20;
+        PP[10].Condition := fco输送带停止;
+        
+    20: // 推料到原点中 (原2→20)
+        astEM[1].s流程显示:='PP[10].推料到原点中';
+        cmd推料到原点中 := TRUE;
+        PP[10].DelayTime := 100;
+        PP[10].NextStepNo := 30;
+        PP[10].Condition := fco推料到原点中;
+        
+    30: // 流程就绪中 (原3→30)
+        astEM[1].s流程显示:='PP[10].流程就绪中';
+        cmd流程就绪中 := TRUE;
+        PP[10].DelayTime := 100;
+        PP[10].NextStepNo := 1000;
+        PP[10].Condition := fco流程就绪中;
+        
+    1000: // 最终完成步
+        astEM[1].s流程显示:='PP[10].最终完成步';
+        FCO_START[10] := TRUE;
+        PP[10].DelayTime := 100;
+        PP[10].NextStepNo := 0;
+        PP[10].Condition := NOT CMD_START[10];
+END_CASE;
+
+// ==================== PP[11] ====================
+// PP[11] - 输送带启动控制功能块
+// 步骤说明 (步号按10的倍数递增):
+//   10: 输送带启动 (原1)
+//   20: 推料气缸动点中 (原2)
+//   30: 推料气缸原点中 (原3)
+//   40: 等待物料到达中 (原4)
+//   50: 输送带停止 (原5)
+//   1000: 最终完成步
+//   0: idle状态
+
+cmd输送带启动 := FALSE;
+cmd推料气缸动点中 := FALSE;
+cmd推料气缸原点中 := FALSE;
+cmd等待物料到达中 := FALSE;
+FCO_START[11] := FALSE;
+
+CASE PP[11].StepNo OF
+    0:  // idle状态
+        PP[11].DelayTime := 100;
+        PP[11].NextStepNo := 0;
+        PP[11].Condition := FALSE;
+        
+        IF CMD_START[11] THEN
+            PP[11].NextStepNo := 10;
+            PP[11].Condition := TRUE;
+        END_IF;
+        
+    10: // 输送带启动 (原1→10)
+        astEM[1].s流程显示:='PP[11].输送带启动';
+        cmd输送带启动 := TRUE;
+        PP[11].DelayTime := 100;
+        PP[11].NextStepNo := 20;
+        PP[11].Condition := fco输送带启动;
+        
+    20: // 推料气缸动点中 (原2→20)
+        astEM[1].s流程显示:='PP[11].推料气缸动点中';
+        cmd推料气缸动点中 := TRUE;
+        PP[11].DelayTime := 100;
+        PP[11].NextStepNo := 30;
+        PP[11].Condition := fco推料气缸动点中;
+        
+    30: // 推料气缸原点中 (原3→30)
+        astEM[1].s流程显示:='PP[11].推料气缸原点中';
+        cmd推料气缸原点中 := TRUE;
+        PP[11].DelayTime := 100;
+        PP[11].NextStepNo := 40;
+        PP[11].Condition := fco推料气缸原点中;
+        
+    40: // 等待物料到达中 (原4→40)
+        astEM[1].s流程显示:='PP[11].等待物料到达中';
+        cmd等待物料到达中 := TRUE;
+        PP[11].DelayTime := 100;
+        PP[11].NextStepNo := 50;
+        PP[11].Condition := fco等待物料到达中;
+        
+    50: // 输送带停止 (原5→50)
+        astEM[1].s流程显示:='PP[11].输送带停止';
+        cmd输送带停止 := TRUE;
+        PP[11].DelayTime := 100;
+        PP[11].NextStepNo := 1000;
+        PP[11].Condition := fco输送带停止;
+        
+    1000: // 最终完成步
+        astEM[1].s流程显示:='PP[11].最终完成步';
+        FCO_START[11] := TRUE;
+        PP[11].DelayTime := 100;
+        PP[11].NextStepNo := 0;
+        PP[11].Condition := NOT CMD_START[11];
+END_CASE;
+
+// ==================== PP[20] ====================
+// PP[20] - 底盖原点控制功能块
+// 步骤说明 (步号按10的倍数递增):
+//   10: 底盖夹料到原点 (原1)
+//   20: 底盖安装到原点 (原2)
+//   30: 底盖旋转到原点 (原3)
+//   1000: 最终完成步
+//   0: idle状态
+
+cmd底盖夹料到原点 := FALSE;
+cmd底盖安装到原点 := FALSE;
+cmd底盖旋转到原点 := FALSE;
+FCO_START[20] := FALSE;
+
+CASE PP[20].StepNo OF
+    0:  // idle状态
+        PP[20].DelayTime := 100;
+        PP[20].NextStepNo := 0;
+        PP[20].Condition := FALSE;
+        
+        IF CMD_START[20] THEN
+            PP[20].NextStepNo := 10;
+            PP[20].Condition := TRUE;
+        END_IF;
+        
+    10: // 底盖夹料到原点 (原1→10)
+        astEM[2].s流程显示:='PP[20].底盖夹料到原点';
+        cmd底盖夹料到原点 := TRUE;
+        PP[20].DelayTime := 100;
+        PP[20].NextStepNo := 20;
+        PP[20].Condition := fco底盖夹料到原点;
+        
+    20: // 底盖安装到原点 (原2→20)
+        astEM[2].s流程显示:='PP[20].底盖安装到原点';
+        cmd底盖安装到原点 := TRUE;
+        PP[20].DelayTime := 100;
+        PP[20].NextStepNo := 30;
+        PP[20].Condition := fco底盖安装到原点;
+        
+    30: // 底盖旋转到原点 (原3→30)
+        astEM[2].s流程显示:='PP[20].底盖旋转到原点';
+        cmd底盖旋转到原点 := TRUE;
+        PP[20].DelayTime := 100;
+        PP[20].NextStepNo := 1000;
+        PP[20].Condition := fco底盖旋转到原点;
+        
+    1000: // 最终完成步
+        astEM[2].s流程显示:='PP[20].最终完成步';
+        FCO_START[20] := TRUE;
+        PP[20].DelayTime := 100;
+        PP[20].NextStepNo := 0;
+        PP[20].Condition := NOT CMD_START[20];
+END_CASE;
+
+// ==================== PP[21] ====================
+// PP[21] - 底盖运动控制功能块
+// 步骤说明 (步号按10的倍数递增):
+//   10: 等待底盖有物料 (原1)
+//   20: 底盖安装到动点 (原2)
+//   30: 底盖夹料到动点 (原3)
+//   40: 底盖安装到动点 (原4)
+//   50: 底盖旋转到动点 (原5)
+//   60: 等待转盘允许放料 (原6)
+//   70: 底盖安装到动点 (原7)
+//   80: 底盖夹料到原点 (原8)
+//   90: 底盖安装到原点 (原9)
+//   100: 底盖旋转到原点 (原10)
+//   1000: 最终完成步
+//   0: idle状态
+
+cmd等待底盖有物料 := FALSE;
+cmd底盖安装到动点 := FALSE;
+cmd底盖夹料到动点 := FALSE;
+cmd底盖旋转到动点 := FALSE;
+cmd等待转盘允许放料 := FALSE;
+cmd底盖夹料到原点 := FALSE;
+cmd底盖旋转到原点 := FALSE;
+FCO_START[21] := FALSE;
+
+CASE PP[21].StepNo OF
+    0:  // idle状态
+        PP[21].DelayTime := 100;
+        PP[21].NextStepNo := 0;
+        PP[21].Condition := FALSE;
+        
+        IF CMD_START[21] THEN
+            PP[21].NextStepNo := 10;
+            PP[21].Condition := TRUE;
+        END_IF;
+        
+    10: // 等待底盖有物料 (原1→10)
+        astEM[2].s流程显示:='PP[21].等待底盖有物料';
+        cmd等待底盖有物料 := TRUE;
+        PP[21].DelayTime := 100;
+        PP[21].NextStepNo := 20;
+        PP[21].Condition := fco等待底盖有物料;
+        
+    20: // 底盖安装到动点 (原2→20)
+        astEM[2].s流程显示:='PP[21].底盖安装到动点';
+        cmd底盖安装到动点 := TRUE;
+        PP[21].DelayTime := 100;
+        PP[21].NextStepNo := 30;
+        PP[21].Condition := fco底盖安装到动点;
+        
+    30: // 底盖夹料到动点 (原3→30)
+        astEM[2].s流程显示:='PP[21].底盖夹料到动点';
+        cmd底盖夹料到动点 := TRUE;
+        PP[21].DelayTime := 100;
+        PP[21].NextStepNo := 40;
+        PP[21].Condition := fco底盖夹料到动点;
+        
+    40: // 底盖安装到动点 (原4→40)
+        astEM[2].s流程显示:='PP[21].底盖安装到动点';
+        cmd底盖安装到动点 := TRUE;
+        PP[21].DelayTime := 100;
+        PP[21].NextStepNo := 50;
+        PP[21].Condition := fco底盖安装到动点;
+        
+    50: // 底盖旋转到动点 (原5→50)
+        astEM[2].s流程显示:='PP[21].底盖旋转到动点';
+        cmd底盖旋转到动点 := TRUE;
+        PP[21].DelayTime := 100;
+        PP[21].NextStepNo := 60;
+        PP[21].Condition := fco底盖旋转到动点;
+        
+    60: // 等待转盘允许放料 (原6→60)
+        astEM[2].s流程显示:='PP[21].等待转盘允许放料';
+        cmd等待转盘允许放料 := TRUE;
+        PP[21].DelayTime := 100;
+        PP[21].NextStepNo := 70;
+        PP[21].Condition := fco等待转盘允许放料;
+        
+    70: // 底盖安装到动点 (原7→70)
+        astEM[2].s流程显示:='PP[21].底盖安装到动点';
+        cmd底盖安装到动点 := TRUE;
+        PP[21].DelayTime := 100;
+        PP[21].NextStepNo := 80;
+        PP[21].Condition := fco底盖安装到动点;
+        
+    80: // 底盖夹料到原点 (原8→80)
+        astEM[2].s流程显示:='PP[21].底盖夹料到原点';
+        cmd底盖夹料到原点 := TRUE;
+        PP[21].DelayTime := 100;
+        PP[21].NextStepNo := 90;
+        PP[21].Condition := fco底盖夹料到原点;
+        
+    90: // 底盖安装到原点 (原9→90)
+        astEM[2].s流程显示:='PP[21].底盖安装到原点';
+        cmd底盖安装到原点 := TRUE;
+        PP[21].DelayTime := 100;
+        PP[21].NextStepNo := 100;
+        PP[21].Condition := fco底盖安装到原点;
+        
+    100: // 底盖旋转到原点 (原10→100)
+        astEM[2].s流程显示:='PP[21].底盖旋转到原点';
+        cmd底盖旋转到原点 := TRUE;
+        PP[21].DelayTime := 100;
+        PP[21].NextStepNo := 1000;
+        PP[21].Condition := fco底盖旋转到原点;
+        
+    1000: // 最终完成步
+        astEM[2].s流程显示:='PP[21].最终完成步';
+        FCO_START[21] := TRUE;
+        PP[21].DelayTime := 100;
+        PP[21].NextStepNo := 0;
+        PP[21].Condition := NOT CMD_START[21];
+END_CASE;
+
+// ==================== PP[30] ====================
+// PP[30] - 转子停止控制功能块
+// 步骤说明 (步号按10的倍数递增):
+//   10: 输送带停止 (原1)
+//   20: 转子拦料到原点 (原2)
+//   30: 转子截料到原点 (原3)
+//   1000: 最终完成步
+//   0: idle状态
+
+cmd输送带停止 := FALSE;
+cmd转子拦料到原点 := FALSE;
+cmd转子截料到原点 := FALSE;
+FCO_START[30] := FALSE;
+
+CASE PP[30].StepNo OF
+    0:  // idle状态
+        PP[30].DelayTime := 100;
+        PP[30].NextStepNo := 0;
+        PP[30].Condition := FALSE;
+        
+        IF CMD_START[30] THEN
+            PP[30].NextStepNo := 10;
+            PP[30].Condition := TRUE;
+        END_IF;
+        
+    10: // 输送带停止 (原1→10)
+        astEM[3].s流程显示:='PP[30].输送带停止';
+        cmd输送带停止 := TRUE;
+        PP[30].DelayTime := 100;
+        PP[30].NextStepNo := 20;
+        PP[30].Condition := fco输送带停止;
+        
+    20: // 转子拦料到原点 (原2→20)
+        astEM[3].s流程显示:='PP[30].转子拦料到原点';
+        cmd转子拦料到原点 := TRUE;
+        PP[30].DelayTime := 100;
+        PP[30].NextStepNo := 30;
+        PP[30].Condition := fco转子拦料到原点;
+        
+    30: // 转子截料到原点 (原3→30)
+        astEM[3].s流程显示:='PP[30].转子截料到原点';
+        cmd转子截料到原点 := TRUE;
+        PP[30].DelayTime := 100;
+        PP[30].NextStepNo := 1000;
+        PP[30].Condition := fco转子截料到原点;
+        
+    1000: // 最终完成步
+        astEM[3].s流程显示:='PP[30].最终完成步';
+        FCO_START[30] := TRUE;
+        PP[30].DelayTime := 100;
+        PP[30].NextStepNo := 0;
+        PP[30].Condition := NOT CMD_START[30];
+END_CASE;
+
+// ==================== PP[31] ====================
+// PP[31] - 转子启动控制功能块
+// 步骤说明 (步号按10的倍数递增):
+//   10: 当前有物料等待被取 (原1)
+//   20: 输送带启动 (原2)
+//   30: 转子截料到动点 (原3)
+//   40: 转子拦料到动点 (原4)
+//   50: 等待物料流出 (原5)
+//   60: 转子拦料到原点 (原6)
+//   70: 转子截料到原点 (原7)
+//   80: 等待物料到位 (原8)
+//   90: 输送带停止 (原9)
+//   1000: 最终完成步
+//   0: idle状态
+
+cmd当前有物料等待被取 := FALSE;
+cmd输送带启动 := FALSE;
+cmd转子截料到动点 := FALSE;
+cmd转子拦料到动点 := FALSE;
+cmd等待物料流出 := FALSE;
+cmd转子拦料到原点 := FALSE;
+cmd转子截料到原点 := FALSE;
+cmd等待物料到位 := FALSE;
+FCO_START[31] := FALSE;
+
+CASE PP[31].StepNo OF
+    0:  // idle状态
+        PP[31].DelayTime := 100;
+        PP[31].NextStepNo := 0;
+        PP[31].Condition := FALSE;
+        
+        IF CMD_START[31] THEN
+            PP[31].NextStepNo := 10;
+            PP[31].Condition := TRUE;
+        END_IF;
+        
+    10: // 当前有物料等待被取 (原1→10)
+        astEM[3].s流程显示:='PP[31].当前有物料等待被取';
+        cmd当前有物料等待被取 := TRUE;
+        PP[31].DelayTime := 100;
+        PP[31].NextStepNo := 20;
+        PP[31].Condition := fco当前有物料等待被取;
+        
+    20: // 输送带启动 (原2→20)
+        astEM[3].s流程显示:='PP[31].输送带启动';
+        cmd输送带启动 := TRUE;
+        PP[31].DelayTime := 100;
+        PP[31].NextStepNo := 30;
+        PP[31].Condition := fco输送带启动;
+        
+    30: // 转子截料到动点 (原3→30)
+        astEM[3].s流程显示:='PP[31].转子截料到动点';
+        cmd转子截料到动点 := TRUE;
+        PP[31].DelayTime := 100;
+        PP[31].NextStepNo := 40;
+        PP[31].Condition := fco转子截料到动点;
+        
+    40: // 转子拦料到动点 (原4→40)
+        astEM[3].s流程显示:='PP[31].转子拦料到动点';
+        cmd转子拦料到动点 := TRUE;
+        PP[31].DelayTime := 100;
+        PP[31].NextStepNo := 50;
+        PP[31].Condition := fco转子拦料到动点;
+        
+    50: // 等待物料流出 (原5→50)
+        astEM[3].s流程显示:='PP[31].等待物料流出';
+        cmd等待物料流出 := TRUE;
+        PP[31].DelayTime := 100;
+        PP[31].NextStepNo := 60;
+        PP[31].Condition := fco等待物料流出;
+        
+    60: // 转子拦料到原点 (原6→60)
+        astEM[3].s流程显示:='PP[31].转子拦料到原点';
+        cmd转子拦料到原点 := TRUE;
+        PP[31].DelayTime := 100;
+        PP[31].NextStepNo := 70;
+        PP[31].Condition := fco转子拦料到原点;
+        
+    70: // 转子截料到原点 (原7→70)
+        astEM[3].s流程显示:='PP[31].转子截料到原点';
+        cmd转子截料到原点 := TRUE;
+        PP[31].DelayTime := 100;
+        PP[31].NextStepNo := 80;
+        PP[31].Condition := fco转子截料到原点;
+        
+    80: // 等待物料到位 (原8→80)
+        astEM[3].s流程显示:='PP[31].等待物料到位';
+        cmd等待物料到位 := TRUE;
+        PP[31].DelayTime := 100;
+        PP[31].NextStepNo := 90;
+        PP[31].Condition := fco等待物料到位;
+        
+    90: // 输送带停止 (原9→90)
+        astEM[3].s流程显示:='PP[31].输送带停止';
+        cmd输送带停止 := TRUE;
+        PP[31].DelayTime := 100;
+        PP[31].NextStepNo := 1000;
+        PP[31].Condition := fco输送带停止;
+        
+    1000: // 最终完成步
+        astEM[3].s流程显示:='PP[31].最终完成步';
+        FCO_START[31] := TRUE;
+        PP[31].DelayTime := 100;
+        PP[31].NextStepNo := 0;
+        PP[31].Condition := NOT CMD_START[31];
+END_CASE;
+
+// ==================== PP[40] ====================
+// PP[40] - 转子原点控制功能块
+// 步骤说明 (步号按10的倍数递增):
+//   10: 转子夹料到原点 (原1)
+//   20: 转子安装到原点 (原2)
+//   30: 转子旋转到原点 (原3)
+//   1000: 最终完成步
+//   0: idle状态
+
+cmd转子夹料到原点 := FALSE;
+cmd转子安装到原点 := FALSE;
+cmd转子旋转到原点 := FALSE;
+FCO_START[40] := FALSE;
+
+CASE PP[40].StepNo OF
+    0:  // idle状态
+        PP[40].DelayTime := 100;
+        PP[40].NextStepNo := 0;
+        PP[40].Condition := FALSE;
+        
+        IF CMD_START[40] THEN
+            PP[40].NextStepNo := 10;
+            PP[40].Condition := TRUE;
+        END_IF;
+        
+    10: // 转子夹料到原点 (原1→10)
+        astEM[4].s流程显示:='PP[40].转子夹料到原点';
+        cmd转子夹料到原点 := TRUE;
+        PP[40].DelayTime := 100;
+        PP[40].NextStepNo := 20;
+        PP[40].Condition := fco转子夹料到原点;
+        
+    20: // 转子安装到原点 (原2→20)
+        astEM[4].s流程显示:='PP[40].转子安装到原点';
+        cmd转子安装到原点 := TRUE;
+        PP[40].DelayTime := 100;
+        PP[40].NextStepNo := 30;
+        PP[40].Condition := fco转子安装到原点;
+        
+    30: // 转子旋转到原点 (原3→30)
+        astEM[4].s流程显示:='PP[40].转子旋转到原点';
+        cmd转子旋转到原点 := TRUE;
+        PP[40].DelayTime := 100;
+        PP[40].NextStepNo := 1000;
+        PP[40].Condition := fco转子旋转到原点;
+        
+    1000: // 最终完成步
+        astEM[4].s流程显示:='PP[40].最终完成步';
+        FCO_START[40] := TRUE;
+        PP[40].DelayTime := 100;
+        PP[40].NextStepNo := 0;
+        PP[40].Condition := NOT CMD_START[40];
+END_CASE;
+
+// ==================== PP[41] ====================
+// PP[41] - 转子运动控制功能块
+// 步骤说明 (步号按10的倍数递增):
+//   10: 等待转子有物料 (原1)
+//   20: 转子安装到动点 (原2)
+//   30: 转子夹料到动点 (原3)
+//   40: 转子安装到原点 (原4)
+//   50: 转子旋转到动点 (原5)
+//   60: 等待转盘允许放料 (原6)
+//   70: 转子夹料到原点 (原7)
+//   80: 转子旋转到原点 (原8)
+//   1000: 最终完成步
+//   0: idle状态
+
+cmd等待转子有物料 := FALSE;
+cmd转子安装到动点 := FALSE;
+cmd转子夹料到动点 := FALSE;
+cmd转子安装到原点 := FALSE;
+cmd转子旋转到动点 := FALSE;
+cmd等待转盘允许放料 := FALSE;
+cmd转子夹料到原点 := FALSE;
+cmd转子旋转到原点 := FALSE;
+FCO_START[41] := FALSE;
+
+CASE PP[41].StepNo OF
+    0:  // idle状态
+        PP[41].DelayTime := 100;
+        PP[41].NextStepNo := 0;
+        PP[41].Condition := FALSE;
+        
+        IF CMD_START[41] THEN
+            PP[41].NextStepNo := 10;
+            PP[41].Condition := TRUE;
+        END_IF;
+        
+    10: // 等待转子有物料 (原1→10)
+        astEM[4].s流程显示:='PP[41].等待转子有物料';
+        cmd等待转子有物料 := TRUE;
+        PP[41].DelayTime := 100;
+        PP[41].NextStepNo := 20;
+        PP[41].Condition := fco等待转子有物料;
+        
+    20: // 转子安装到动点 (原2→20)
+        astEM[4].s流程显示:='PP[41].转子安装到动点';
+        cmd转子安装到动点 := TRUE;
+        PP[41].DelayTime := 100;
+        PP[41].NextStepNo := 30;
+        PP[41].Condition := fco转子安装到动点;
+        
+    30: // 转子夹料到动点 (原3→30)
+        astEM[4].s流程显示:='PP[41].转子夹料到动点';
+        cmd转子夹料到动点 := TRUE;
+        PP[41].DelayTime := 100;
+        PP[41].NextStepNo := 40;
+        PP[41].Condition := fco转子夹料到动点;
+        
+    40: // 转子安装到原点 (原4→40)
+        astEM[4].s流程显示:='PP[41].转子安装到原点';
+        cmd转子安装到原点 := TRUE;
+        PP[41].DelayTime := 100;
+        PP[41].NextStepNo := 50;
+        PP[41].Condition := fco转子安装到原点;
+        
+    50: // 转子旋转到动点 (原5→50)
+        astEM[4].s流程显示:='PP[41].转子旋转到动点';
+        cmd转子旋转到动点 := TRUE;
+        PP[41].DelayTime := 100;
+        PP[41].NextStepNo := 60;
+        PP[41].Condition := fco转子旋转到动点;
+        
+    60: // 等待转盘允许放料 (原6→60)
+        astEM[4].s流程显示:='PP[41].等待转盘允许放料';
+        cmd等待转盘允许放料 := TRUE;
+        PP[41].DelayTime := 100;
+        PP[41].NextStepNo := 70;
+        PP[41].Condition := fco等待转盘允许放料;
+        
+    70: // 转子夹料到原点 (原7→70)
+        astEM[4].s流程显示:='PP[41].转子夹料到原点';
+        cmd转子夹料到原点 := TRUE;
+        PP[41].DelayTime := 100;
+        PP[41].NextStepNo := 80;
+        PP[41].Condition := fco转子夹料到原点;
+        
+    80: // 转子旋转到原点 (原8→80)
+        astEM[4].s流程显示:='PP[41].转子旋转到原点';
+        cmd转子旋转到原点 := TRUE;
+        PP[41].DelayTime := 100;
+        PP[41].NextStepNo := 1000;
+        PP[41].Condition := fco转子旋转到原点;
+        
+    1000: // 最终完成步
+        astEM[4].s流程显示:='PP[41].最终完成步';
+        FCO_START[41] := TRUE;
+        PP[41].DelayTime := 100;
+        PP[41].NextStepNo := 0;
+        PP[41].Condition := NOT CMD_START[41];
+END_CASE;
+
+// ==================== PP[50] ====================
+// PP[50] - 卸料原点控制功能块
+// 步骤说明 (步号按10的倍数递增):
+//   10: 卸料夹料到原点 (原1)
+//   20: 卸料升降到原点 (原2)
+//   30: 卸料旋转到原点 (原3)
+//   1000: 最终完成步
+//   0: idle状态
+
+cmd卸料夹料到原点 := FALSE;
+cmd卸料升降到原点 := FALSE;
+cmd卸料旋转到原点 := FALSE;
+FCO_START[50] := FALSE;
+
+CASE PP[50].StepNo OF
+    0:  // idle状态
+        PP[50].DelayTime := 100;
+        PP[50].NextStepNo := 0;
+        PP[50].Condition := FALSE;
+        
+        IF CMD_START[50] THEN
+            PP[50].NextStepNo := 10;
+            PP[50].Condition := TRUE;
+        END_IF;
+        
+    10: // 卸料夹料到原点 (原1→10)
+        astEM[5].s流程显示:='PP[50].卸料夹料到原点';
+        cmd卸料夹料到原点 := TRUE;
+        PP[50].DelayTime := 100;
+        PP[50].NextStepNo := 20;
+        PP[50].Condition := fco卸料夹料到原点;
+        
+    20: // 卸料升降到原点 (原2→20)
+        astEM[5].s流程显示:='PP[50].卸料升降到原点';
+        cmd卸料升降到原点 := TRUE;
+        PP[50].DelayTime := 100;
+        PP[50].NextStepNo := 30;
+        PP[50].Condition := fco卸料升降到原点;
+        
+    30: // 卸料旋转到原点 (原3→30)
+        astEM[5].s流程显示:='PP[50].卸料旋转到原点';
+        cmd卸料旋转到原点 := TRUE;
+        PP[50].DelayTime := 100;
+        PP[50].NextStepNo := 1000;
+        PP[50].Condition := fco卸料旋转到原点;
+        
+    1000: // 最终完成步
+        astEM[5].s流程显示:='PP[50].最终完成步';
+        FCO_START[50] := TRUE;
+        PP[50].DelayTime := 100;
+        PP[50].NextStepNo := 0;
+        PP[50].Condition := NOT CMD_START[50];
+END_CASE;
+
+// ==================== PP[51] ====================
+// PP[51] - 卸料运动控制功能块
+// 步骤说明 (步号按10的倍数递增):
+//   10: 等待转盘允许取料 (原1)
+//   20: 卸料升降到动点 (原2)
+//   30: 卸料夹料到动点 (原3)
+//   40: 卸料升降到原点 (原4)
+//   50: 卸料旋转到动点 (原5)
+//   60: 卸料夹料到原点 (原6)
+//   70: 卸料旋转到原点 (原7)
+//   1000: 最终完成步
+//   0: idle状态
+
+cmd等待转盘允许取料 := FALSE;
+cmd卸料升降到动点 := FALSE;
+cmd卸料夹料到动点 := FALSE;
+cmd卸料升降到原点 := FALSE;
+cmd卸料旋转到动点 := FALSE;
+cmd卸料夹料到原点 := FALSE;
+cmd卸料旋转到原点 := FALSE;
+FCO_START[51] := FALSE;
+
+CASE PP[51].StepNo OF
+    0:  // idle状态
+        PP[51].DelayTime := 100;
+        PP[51].NextStepNo := 0;
+        PP[51].Condition := FALSE;
+        
+        IF CMD_START[51] THEN
+            PP[51].NextStepNo := 10;
+            PP[51].Condition := TRUE;
+        END_IF;
+        
+    10: // 等待转盘允许取料 (原1→10)
+        astEM[5].s流程显示:='PP[51].等待转盘允许取料';
+        cmd等待转盘允许取料 := TRUE;
+        PP[51].DelayTime := 100;
+        PP[51].NextStepNo := 20;
+        PP[51].Condition := fco等待转盘允许取料;
+        
+    20: // 卸料升降到动点 (原2→20)
+        astEM[5].s流程显示:='PP[51].卸料升降到动点';
+        cmd卸料升降到动点 := TRUE;
+        PP[51].DelayTime := 100;
+        PP[51].NextStepNo := 30;
+        PP[51].Condition := fco卸料升降到动点;
+        
+    30: // 卸料夹料到动点 (原3→30)
+        astEM[5].s流程显示:='PP[51].卸料夹料到动点';
+        cmd卸料夹料到动点 := TRUE;
+        PP[51].DelayTime := 100;
+        PP[51].NextStepNo := 40;
+        PP[51].Condition := fco卸料夹料到动点;
+        
+    40: // 卸料升降到原点 (原4→40)
+        astEM[5].s流程显示:='PP[51].卸料升降到原点';
+        cmd卸料升降到原点 := TRUE;
+        PP[51].DelayTime := 100;
+        PP[51].NextStepNo := 50;
+        PP[51].Condition := fco卸料升降到原点;
+        
+    50: // 卸料旋转到动点 (原5→50)
+        astEM[5].s流程显示:='PP[51].卸料旋转到动点';
+        cmd卸料旋转到动点 := TRUE;
+        PP[51].DelayTime := 100;
+        PP[51].NextStepNo := 60;
+        PP[51].Condition := fco卸料旋转到动点;
+        
+    60: // 卸料夹料到原点 (原6→60)
+        astEM[5].s流程显示:='PP[51].卸料夹料到原点';
+        cmd卸料夹料到原点 := TRUE;
+        PP[51].DelayTime := 100;
+        PP[51].NextStepNo := 70;
+        PP[51].Condition := fco卸料夹料到原点;
+        
+    70: // 卸料旋转到原点 (原7→70)
+        astEM[5].s流程显示:='PP[51].卸料旋转到原点';
+        cmd卸料旋转到原点 := TRUE;
+        PP[51].DelayTime := 100;
+        PP[51].NextStepNo := 1000;
+        PP[51].Condition := fco卸料旋转到原点;
+        
+    1000: // 最终完成步
+        astEM[5].s流程显示:='PP[51].最终完成步';
+        FCO_START[51] := TRUE;
+        PP[51].DelayTime := 100;
+        PP[51].NextStepNo := 0;
+        PP[51].Condition := NOT CMD_START[51];
+END_CASE;
+
+// ==================== PP[60] ====================
+// PP[60] - 转盘回原点功能块
+// 步骤说明 (步号按10的倍数递增):
+//   10: 转盘回原点中 (原1)
+//   1000: 最终完成步
+//   0: idle状态
+
+cmd转盘回原点中 := FALSE;
+FCO_START[60] := FALSE;
+
+CASE PP[60].StepNo OF
+    0:  // idle状态
+        PP[60].DelayTime := 100;
+        PP[60].NextStepNo := 0;
+        PP[60].Condition := FALSE;
+        
+        IF CMD_START[60] THEN
+            PP[60].NextStepNo := 10;
+            PP[60].Condition := TRUE;
+        END_IF;
+        
+    10: // 转盘回原点中 (原1→10)
+        astEM[6].s流程显示:='PP[60].转盘回原点中';
+        cmd转盘回原点中 := TRUE;
+        PP[60].DelayTime := 100;
+        PP[60].NextStepNo := 1000;
+        PP[60].Condition := fco转盘回原点中;
+        
+    1000: // 最终完成步
+        astEM[6].s流程显示:='PP[60].最终完成步';
+        FCO_START[60] := TRUE;
+        PP[60].DelayTime := 100;
+        PP[60].NextStepNo := 0;
+        PP[60].Condition := NOT CMD_START[60];
+END_CASE;
+
+// ==================== PP[61] ====================
+// PP[61] - 转盘分度控制功能块
+// 步骤说明 (步号按10的倍数递增):
+//   10: 等待机构完成 (原1)
+//   20: 分度触发 (原2)
+//   30: 等待转盘到达 (原3)
+//   40: 完成信号复位 (原4)
+//   1000: 最终完成步
+//   0: idle状态
+
+cmd等待机构完成 := FALSE;
+cmd分度触发 := FALSE;
+cmd等待转盘到达 := FALSE;
+cmd完成信号复位 := FALSE;
+FCO_START[61] := FALSE;
+
+CASE PP[61].StepNo OF
+    0:  // idle状态
+        PP[61].DelayTime := 100;
+        PP[61].NextStepNo := 0;
+        PP[61].Condition := FALSE;
+        
+        IF CMD_START[61] THEN
+            PP[61].NextStepNo := 10;
+            PP[61].Condition := TRUE;
+        END_IF;
+        
+    10: // 等待机构完成 (原1→10)
+        astEM[6].s流程显示:='PP[61].等待机构完成';
+        cmd等待机构完成 := TRUE;
+        PP[61].DelayTime := 100;
+        PP[61].NextStepNo := 20;
+        PP[61].Condition := fco等待机构完成;
+        
+    20: // 分度触发 (原2→20)
+        astEM[6].s流程显示:='PP[61].分度触发';
+        cmd分度触发 := TRUE;
+        PP[61].DelayTime := 100;
+        PP[61].NextStepNo := 30;
+        PP[61].Condition := fco分度触发;
+        
+    30: // 等待转盘到达 (原3→30)
+        astEM[6].s流程显示:='PP[61].等待转盘到达';
+        cmd等待转盘到达 := TRUE;
+        PP[61].DelayTime := 100;
+        PP[61].NextStepNo := 40;
+        PP[61].Condition := fco等待转盘到达;
+        
+    40: // 完成信号复位 (原4→40)
+        astEM[6].s流程显示:='PP[61].完成信号复位';
+        cmd完成信号复位 := TRUE;
+        PP[61].DelayTime := 100;
+        PP[61].NextStepNo := 1000;
+        PP[61].Condition := fco完成信号复位;
+        
+    1000: // 最终完成步
+        astEM[6].s流程显示:='PP[61].最终完成步';
+        FCO_START[61] := TRUE;
+        PP[61].DelayTime := 100;
+        PP[61].NextStepNo := 0;
+        PP[61].Condition := NOT CMD_START[61];
+END_CASE;
