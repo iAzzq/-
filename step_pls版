@@ -1,0 +1,180 @@
+
+
+
+
+
+
+
+
+// ==================== PP[1] ====================
+// PP[1] - 系统初始化功能块
+// 步骤说明 (步号按10的倍数递增):
+//   10: 初始化所有stepno (原1)
+//   20: 轴使能 (原2)
+//   30: 初始化所有机构 (原3)
+//   40: 转盘初始化 (原4)
+//   1000: 最终完成步
+//   0: idle状态
+FCO_START[1] := FALSE;
+
+CASE PP[1].StepNo OF
+    0:  // idle状态
+	PP[1].DelayTime  := 100;
+	PP[1].NextStepNo := 10;
+	PP[1].Condition  := CMD_START[1];
+	
+    10: // 初始化所有stepno (原1→10)
+	astEM[0].s流程显示:='PP[1].初始化所有stepno';
+	cmd初始化所有stepno := PP[1].OutPls;
+	PP[1].DelayTime := 100;
+	PP[1].NextStepNo := 20;
+	PP[1].Condition := fco初始化所有stepno;
+	
+    20: // 轴使能 (原2→20)
+	astEM[0].s流程显示:='PP[1].轴使能';
+	cmd轴使能 := PP[1].OutPls;
+	PP[1].DelayTime := 100;
+	PP[1].NextStepNo := 30;
+	PP[1].Condition := fco轴使能;
+	
+    30: // 初始化所有机构 (原3→30)
+	astEM[0].s流程显示:='PP[1].初始化所有机构';
+	cmd初始化所有机构 := PP[1].OutPls;
+	PP[1].DelayTime := 100;
+	PP[1].NextStepNo := 40;
+	PP[1].Condition := fco初始化所有机构;
+	
+    40: // 转盘初始化 (原4→40)
+	astEM[0].s流程显示:='PP[1].转盘初始化';
+	cmd转盘初始化 := PP[1].OutPls;
+	PP[1].DelayTime := 100;
+	PP[1].NextStepNo := 1000;
+	PP[1].Condition := fco转盘初始化;
+	
+    1000: // 最终完成步
+	astEM[0].s流程显示:='PP[1].最终完成步';
+	FCO_START[1] := TRUE;
+	PP[1].DelayTime := 100;
+	PP[1].NextStepNo := 0;
+	PP[1].Condition := NOT CMD_START[1];
+END_CASE;
+
+
+
+
+// ==================== PP[2] ====================
+// PP[2] - 系统启动功能块
+// 步骤说明 (步号按10的倍数递增):
+//   10: 所有机构启动 (原1)
+//   20: 转盘旋转 (原2)
+//   30: 传递数据 (原3)
+//   40: 完成 (原4)
+//   1000: 最终完成步
+//   0: idle状态
+
+
+FCO_START[2] := FALSE;
+
+CASE PP[2].StepNo OF
+    0:  // idle状态
+	PP[2].DelayTime := 100;
+	PP[2].NextStepNo := 10;
+	PP[2].Condition := CMD_START[2];
+	
+    10: // 所有机构启动 (原1→10)
+	astEM[0].s流程显示:='PP[2].所有机构启动';
+	cmd所有机构启动 :=  PP[2].OutPls;
+	PP[2].DelayTime := 100;
+	PP[2].NextStepNo := 20;
+	PP[2].Condition := fco所有机构启动;
+	
+    20: // 转盘旋转 (原2→20)
+	astEM[0].s流程显示:='PP[2].转盘旋转';
+	cmd转盘旋转 := PP[2].OutPls;
+	PP[2].DelayTime := 100;
+	PP[2].NextStepNo := 30;
+	PP[2].Condition := fco转盘旋转;
+	
+    30: // 传递数据 (原3→30)
+	astEM[0].s流程显示:='PP[2].传递数据';
+	cmd传递数据 := PP[2].OutPls;
+	PP[2].DelayTime := 100;
+	PP[2].NextStepNo := 40;
+	PP[2].Condition := fco传递数据;
+	
+    40: // 完成 (原4→40)
+	astEM[0].s流程显示:='PP[2].完成';
+	cmd完成 := PP[2].OutPls;
+	PP[2].DelayTime := 100;
+	PP[2].NextStepNo := 1000;
+	PP[2].Condition := fco完成;
+	
+    1000: // 最终完成步
+	astEM[0].s流程显示:='PP[2].最终完成步';
+	FCO_START[2] := TRUE;
+	PP[2].DelayTime := 100;
+	PP[2].NextStepNo := 0;
+	PP[2].Condition := NOT CMD_START[2];
+END_CASE;
+
+// ==================== PP[31] ====================
+// PP[31] - 电梯物料控制功能块
+// 步骤说明 (步号按10的倍数递增):
+//   10: 电梯进料 (原1)
+//   20: 电梯到顶 (原2)
+//   30: 等待取料 (原3)
+//   40: 电梯到底 (原4)
+//   50: 电梯出料 (原5)
+//   1000: 最终完成步
+//   0: idle状态
+
+FCO_START[31] := FALSE;
+
+CASE PP[31].StepNo OF
+    0:  // idle状态
+	PP[31].DelayTime := 100;
+	PP[31].NextStepNo := 10;
+	PP[31].Condition := CMD_START[31];
+	
+    10: // 电梯进料 (原1→10)
+	astEM[3].s流程显示:='PP[31].电梯进料';
+	cmd电梯进料 := PP[31].OutPls;
+	PP[31].DelayTime := 100;
+	PP[31].NextStepNo := 20;
+	PP[31].Condition := fco电梯进料;
+	
+    20: // 电梯到顶 (原2→20)
+	astEM[3].s流程显示:='PP[31].电梯到顶';
+	cmd电梯到顶 := PP[31].OutPls;
+	PP[31].DelayTime := 100;
+	PP[31].NextStepNo := 30;
+	PP[31].Condition := fco电梯到顶;
+	
+    30: // 等待取料 (原3→30)
+	astEM[3].s流程显示:='PP[31].等待取料';
+	cmd等待取料 := PP[31].OutPls;
+	PP[31].DelayTime := 100;
+	PP[31].NextStepNo := 40;
+	PP[31].Condition := fco等待取料;
+	
+    40: // 电梯到底 (原4→40)
+	astEM[3].s流程显示:='PP[31].电梯到底';
+	cmd电梯到底 := PP[31].OutPls;
+	PP[31].DelayTime := 100;
+	PP[31].NextStepNo := 50;
+	PP[31].Condition := fco电梯到底;
+	
+    50: // 电梯出料 (原5→50)
+	astEM[3].s流程显示:='PP[31].电梯出料';
+	cmd电梯出料 := PP[31].OutPls;
+	PP[31].DelayTime := 100;
+	PP[31].NextStepNo := 1000;
+	PP[31].Condition := fco电梯出料;
+	
+    1000: // 最终完成步
+	astEM[3].s流程显示:='PP[31].最终完成步';
+	FCO_START[31] := TRUE;
+	PP[31].DelayTime := 100;
+	PP[31].NextStepNo := 0;
+	PP[31].Condition := NOT CMD_START[31];
+END_CASE;
