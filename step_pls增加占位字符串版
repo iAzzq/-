@@ -1,0 +1,74 @@
+
+
+
+PP31 卸货  0.5卸货开始 1电梯进料 2电梯到顶 3等待取料 4电梯到底 5电梯出料  
+
+// ==================== PP[31] ====================
+// PP[31] - 卸货电梯物料控制功能块
+// 步骤说明 (步号按10的倍数递增):
+//   5: 卸货开始 (原0.5)
+//   10: 电梯进料 (原1)
+//   20: 电梯到顶 (原2)
+//   30: 等待取料 (原3)
+//   40: 电梯到底 (原4)
+//   50: 电梯出料 (原5)
+//   1000: 最终完成步
+//   0: idle状态
+
+FCO_START[31] := FALSE;
+
+CASE PP[31].StepNo OF
+    0:  // idle状态
+        PP[31].DelayTime := 100;
+        PP[31].NextStepNo := 5;
+        PP[31].Condition := CMD_START[31];
+        
+    5:  // 卸货开始 (原0.5→5)
+        astEM[3].s流程显示:='PP[31].卸货开始';
+        卸货cmd卸货开始 := PP[31].OutPls;
+        PP[31].DelayTime := 100;
+        PP[31].NextStepNo := 10;
+        PP[31].Condition := 卸货fco卸货开始;
+        
+    10: // 电梯进料 (原1→10)
+        astEM[3].s流程显示:='PP[31].电梯进料';
+        卸货cmd电梯进料 := PP[31].OutPls;
+        PP[31].DelayTime := 100;
+        PP[31].NextStepNo := 20;
+        PP[31].Condition := 卸货fco电梯进料;
+        
+    20: // 电梯到顶 (原2→20)
+        astEM[3].s流程显示:='PP[31].电梯到顶';
+        卸货cmd电梯到顶 := PP[31].OutPls;
+        PP[31].DelayTime := 100;
+        PP[31].NextStepNo := 30;
+        PP[31].Condition := 卸货fco电梯到顶;
+        
+    30: // 等待取料 (原3→30)
+        astEM[3].s流程显示:='PP[31].等待取料';
+        卸货cmd等待取料 := PP[31].OutPls;
+        PP[31].DelayTime := 100;
+        PP[31].NextStepNo := 40;
+        PP[31].Condition := 卸货fco等待取料;
+        
+    40: // 电梯到底 (原4→40)
+        astEM[3].s流程显示:='PP[31].电梯到底';
+        卸货cmd电梯到底 := PP[31].OutPls;
+        PP[31].DelayTime := 100;
+        PP[31].NextStepNo := 50;
+        PP[31].Condition := 卸货fco电梯到底;
+        
+    50: // 电梯出料 (原5→50)
+        astEM[3].s流程显示:='PP[31].电梯出料';
+        卸货cmd电梯出料 := PP[31].OutPls;
+        PP[31].DelayTime := 100;
+        PP[31].NextStepNo := 1000;
+        PP[31].Condition := 卸货fco电梯出料;
+        
+    1000: // 最终完成步
+        astEM[3].s流程显示:='PP[31].最终完成步';
+        FCO_START[31] := TRUE;
+        PP[31].DelayTime := 100;
+        PP[31].NextStepNo := 0;
+        PP[31].Condition := NOT CMD_START[31];
+END_CASE;
