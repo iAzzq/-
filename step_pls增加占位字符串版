@@ -1,74 +1,129 @@
+pp1 左装胎 0.5装胎开始 1转入2到放胎位3定型4送5到等待位6转出7无胎8取胎9到取胎位10夹11到等待位12有胎
 
 
 
-PP31 卸货  0.5卸货开始 1电梯进料 2电梯到顶 3等待取料 4电梯到底 5电梯出料  
-
-// ==================== PP[31] ====================
-// PP[31] - 卸货电梯物料控制功能块
+// ==================== PP[1] ====================
+// PP[1] - 左装胎控制功能块
 // 步骤说明 (步号按10的倍数递增):
-//   5: 卸货开始 (原0.5)
-//   10: 电梯进料 (原1)
-//   20: 电梯到顶 (原2)
-//   30: 等待取料 (原3)
-//   40: 电梯到底 (原4)
-//   50: 电梯出料 (原5)
+//   5: 装胎开始 (原0.5)
+//   10: 转入 (原1)
+//   20: 到放胎位 (原2)
+//   30: 定型 (原3)
+//   40: 送 (原4)
+//   50: 到等待位 (原5)
+//   60: 转出 (原6)
+//   70: 无胎 (原7)
+//   80: 取胎 (原8)
+//   90: 到取胎位 (原9)
+//   100: 夹 (原10)
+//   110: 到等待位 (原11)
+//   120: 有胎 (原12)
 //   1000: 最终完成步
 //   0: idle状态
 
-FCO_START[31] := FALSE;
+FCO_START[1] := FALSE;
 
-CASE PP[31].StepNo OF
+CASE PP[1].StepNo OF
     0:  // idle状态
-        PP[31].DelayTime := 100;
-        PP[31].NextStepNo := 5;
-        PP[31].Condition := CMD_START[31];
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 5;
+        PP[1].Condition := CMD_START[1];
         
-    5:  // 卸货开始 (原0.5→5)
-        astEM[3].s流程显示:='PP[31].卸货开始';
-        卸货cmd卸货开始 := PP[31].OutPls;
-        PP[31].DelayTime := 100;
-        PP[31].NextStepNo := 10;
-        PP[31].Condition := 卸货fco卸货开始;
+    5:  // 装胎开始 (原0.5→5)
+        astEM[0].s流程显示:='PP[1].装胎开始';
+        左装胎cmd装胎开始 := PP[1].OutPls;
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 10;
+        PP[1].Condition := 左装胎fco装胎开始;
         
-    10: // 电梯进料 (原1→10)
-        astEM[3].s流程显示:='PP[31].电梯进料';
-        卸货cmd电梯进料 := PP[31].OutPls;
-        PP[31].DelayTime := 100;
-        PP[31].NextStepNo := 20;
-        PP[31].Condition := 卸货fco电梯进料;
+    10: // 转入 (原1→10)
+        astEM[0].s流程显示:='PP[1].转入';
+        左装胎cmd转入 := PP[1].OutPls;
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 20;
+        PP[1].Condition := 左装胎fco转入;
         
-    20: // 电梯到顶 (原2→20)
-        astEM[3].s流程显示:='PP[31].电梯到顶';
-        卸货cmd电梯到顶 := PP[31].OutPls;
-        PP[31].DelayTime := 100;
-        PP[31].NextStepNo := 30;
-        PP[31].Condition := 卸货fco电梯到顶;
+    20: // 到放胎位 (原2→20)
+        astEM[0].s流程显示:='PP[1].到放胎位';
+        左装胎cmd到放胎位 := PP[1].OutPls;
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 30;
+        PP[1].Condition := 左装胎fco到放胎位;
         
-    30: // 等待取料 (原3→30)
-        astEM[3].s流程显示:='PP[31].等待取料';
-        卸货cmd等待取料 := PP[31].OutPls;
-        PP[31].DelayTime := 100;
-        PP[31].NextStepNo := 40;
-        PP[31].Condition := 卸货fco等待取料;
+    30: // 定型 (原3→30)
+        astEM[0].s流程显示:='PP[1].定型';
+        左装胎cmd定型 := PP[1].OutPls;
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 40;
+        PP[1].Condition := 左装胎fco定型;
         
-    40: // 电梯到底 (原4→40)
-        astEM[3].s流程显示:='PP[31].电梯到底';
-        卸货cmd电梯到底 := PP[31].OutPls;
-        PP[31].DelayTime := 100;
-        PP[31].NextStepNo := 50;
-        PP[31].Condition := 卸货fco电梯到底;
+    40: // 送 (原4→40)
+        astEM[0].s流程显示:='PP[1].送';
+        左装胎cmd送 := PP[1].OutPls;
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 50;
+        PP[1].Condition := 左装胎fco送;
         
-    50: // 电梯出料 (原5→50)
-        astEM[3].s流程显示:='PP[31].电梯出料';
-        卸货cmd电梯出料 := PP[31].OutPls;
-        PP[31].DelayTime := 100;
-        PP[31].NextStepNo := 1000;
-        PP[31].Condition := 卸货fco电梯出料;
+    50: // 到等待位 (原5→50)
+        astEM[0].s流程显示:='PP[1].到等待位';
+        左装胎cmd到等待位 := PP[1].OutPls;
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 60;
+        PP[1].Condition := 左装胎fco到等待位;
+        
+    60: // 转出 (原6→60)
+        astEM[0].s流程显示:='PP[1].转出';
+        左装胎cmd转出 := PP[1].OutPls;
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 70;
+        PP[1].Condition := 左装胎fco转出;
+        
+    70: // 无胎 (原7→70)
+        astEM[0].s流程显示:='PP[1].无胎';
+        左装胎cmd无胎 := PP[1].OutPls;
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 80;
+        PP[1].Condition := 左装胎fco无胎;
+        
+    80: // 取胎 (原8→80)
+        astEM[0].s流程显示:='PP[1].取胎';
+        左装胎cmd取胎 := PP[1].OutPls;
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 90;
+        PP[1].Condition := 左装胎fco取胎;
+        
+    90: // 到取胎位 (原9→90)
+        astEM[0].s流程显示:='PP[1].到取胎位';
+        左装胎cmd到取胎位 := PP[1].OutPls;
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 100;
+        PP[1].Condition := 左装胎fco到取胎位;
+        
+    100: // 夹 (原10→100)
+        astEM[0].s流程显示:='PP[1].夹';
+        左装胎cmd夹 := PP[1].OutPls;
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 110;
+        PP[1].Condition := 左装胎fco夹;
+        
+    110: // 到等待位 (原11→110)
+        astEM[0].s流程显示:='PP[1].到等待位';
+        左装胎cmd到等待位 := PP[1].OutPls;
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 120;
+        PP[1].Condition := 左装胎fco到等待位;
+        
+    120: // 有胎 (原12→120)
+        astEM[0].s流程显示:='PP[1].有胎';
+        左装胎cmd有胎 := PP[1].OutPls;
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 1000;
+        PP[1].Condition := 左装胎fco有胎;
         
     1000: // 最终完成步
-        astEM[3].s流程显示:='PP[31].最终完成步';
-        FCO_START[31] := TRUE;
-        PP[31].DelayTime := 100;
-        PP[31].NextStepNo := 0;
-        PP[31].Condition := NOT CMD_START[31];
+        astEM[0].s流程显示:='PP[1].最终完成步';
+        FCO_START[1] := TRUE;
+        PP[1].DelayTime := 100;
+        PP[1].NextStepNo := 0;
+        PP[1].Condition := NOT CMD_START[1];
 END_CASE;
