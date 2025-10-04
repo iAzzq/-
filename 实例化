@@ -1,43 +1,63 @@
-//Fast气缸_C_1(IO_st气缸  := ast气缸[1]);
 
 IF TRUE THEN
-Fast气缸_C_1(IO_st气缸  := ast气缸[1]);
-Fast气缸_C_2(IO_st气缸  := ast气缸[2]);
-Fast气缸_C_3(IO_st气缸  := ast气缸[3]);
-Fast气缸_C_4(IO_st气缸  := ast气缸[4]);
-Fast气缸_C_5(IO_st气缸  := ast气缸[5]);
-Fast气缸_C_6(IO_st气缸  := ast气缸[6]);
-Fast气缸_C_7(IO_st气缸  := ast气缸[7]);
-Fast气缸_C_8(IO_st气缸  := ast气缸[8]);
-Fast气缸_C_9(IO_st气缸  := ast气缸[9]);
-Fast气缸_C_10(IO_st气缸 := ast气缸[10]);
-Fast气缸_C_11(IO_st气缸 := ast气缸[11]);
-Fast气缸_C_12(IO_st气缸 := ast气缸[12]);
-Fast气缸_C_13(IO_st气缸 := ast气缸[13]);
-Fast气缸_C_14(IO_st气缸 := ast气缸[14]);
-Fast气缸_C_15(IO_st气缸 := ast气缸[15]);
-Fast气缸_C_16(IO_st气缸 := ast气缸[16]);
-Fast气缸_C_17(IO_st气缸 := ast气缸[17]);
-Fast气缸_C_18(IO_st气缸 := ast气缸[18]);
-Fast气缸_C_19(IO_st气缸 := ast气缸[19]);
-Fast气缸_C_20(IO_st气缸 := ast气缸[20]);
-Fast气缸_C_21(IO_st气缸 := ast气缸[21]);
-Fast气缸_C_22(IO_st气缸 := ast气缸[22]);
-Fast气缸_C_23(IO_st气缸 := ast气缸[23]);
-Fast气缸_C_24(IO_st气缸 := ast气缸[24]);
-Fast气缸_C_25(IO_st气缸 := ast气缸[25]);
-Fast气缸_C_26(IO_st气缸 := ast气缸[26]);
-Fast气缸_C_27(IO_st气缸 := ast气缸[27]);
-Fast气缸_C_28(IO_st气缸 := ast气缸[28]);
-Fast气缸_C_29(IO_st气缸 := ast气缸[29]);
-Fast气缸_C_30(IO_st气缸 := ast气缸[30]);
-	; 
-ELSE
-	; 
+	Fast气缸_C_1(IO_st气缸  := ast气缸[1]);
+    Fast气缸_C_2(IO_st气缸  := ast气缸[2]);
+    Fast气缸_C_3(IO_st气缸  := ast气缸[3]);
+    Fast气缸_C_4(IO_st气缸  := ast气缸[4]);
+    Fast气缸_C_5(IO_st气缸  := ast气缸[5]);
+    Fast气缸_C_6(IO_st气缸  := ast气缸[6]);
+    Fast气缸_C_7(IO_st气缸  := ast气缸[7]);
+    Fast气缸_C_8(IO_st气缸  := ast气缸[8]);
+    Fast气缸_C_9(IO_st气缸  := ast气缸[9]);
+    Fast气缸_C_10(IO_st气缸 := ast气缸[10]);
+    Fast气缸_C_11(IO_st气缸 := ast气缸[11]);
+    Fast气缸_C_12(IO_st气缸 := ast气缸[12]);
+    Fast气缸_C_13(IO_st气缸 := ast气缸[13]);
+    Fast气缸_C_14(IO_st气缸 := ast气缸[14]);
+    Fast气缸_C_15(IO_st气缸 := ast气缸[15]);
+    Fast气缸_C_16(IO_st气缸 := ast气缸[16]);
+    Fast气缸_C_17(IO_st气缸 := ast气缸[17]);
+    Fast气缸_C_18(IO_st气缸 := ast气缸[18]);
+    Fast气缸_C_19(IO_st气缸 := ast气缸[19]);
+    Fast气缸_C_20(IO_st气缸 := ast气缸[20]);
+    Fast气缸_C_21(IO_st气缸 := ast气缸[21]);
+    Fast气缸_C_22(IO_st气缸 := ast气缸[22]);
+    Fast气缸_C_23(IO_st气缸 := ast气缸[23]);
+    Fast气缸_C_24(IO_st气缸 := ast气缸[24]);
+    Fast气缸_C_25(IO_st气缸 := ast气缸[25]);
+    Fast气缸_C_26(IO_st气缸 := ast气缸[26]);
+    Fast气缸_C_27(IO_st气缸 := ast气缸[27]);
+    Fast气缸_C_28(IO_st气缸 := ast气缸[28]);
+    Fast气缸_C_29(IO_st气缸 := ast气缸[29]);
+    Fast气缸_C_30(IO_st气缸 := ast气缸[30]);
+    Fast气缸_C_31(IO_st气缸 := ast气缸[31]);
+    Fast气缸_C_32(IO_st气缸 := ast气缸[32]);
+    Fast气缸_C_33(IO_st气缸 := ast气缸[33]);
+    Fast气缸_C_34(IO_st气缸 := ast气缸[34]);
+    Fast气缸_C_35(IO_st气缸 := ast气缸[35]);
+    Fast气缸_C_36(IO_st气缸 := ast气缸[36]);
+    Fast气缸_C_37(IO_st气缸 := ast气缸[37]);
+    Fast气缸_C_38(IO_st气缸 := ast气缸[38]);
+    Fast气缸_C_39(IO_st气缸 := ast气缸[39]);
+    Fast气缸_C_40(IO_st气缸 := ast气缸[40]);
+    Fast气缸_C_41(IO_st气缸 := ast气缸[41]);
+    Fast气缸_C_42(IO_st气缸 := ast气缸[42]);
+    Fast气缸_C_43(IO_st气缸 := ast气缸[43]);
+    Fast气缸_C_44(IO_st气缸 := ast气缸[44]);
+    Fast气缸_C_45(IO_st气缸 := ast气缸[45]);
+    Fast气缸_C_46(IO_st气缸 := ast气缸[46]);
+    Fast气缸_C_47(IO_st气缸 := ast气缸[47]);
+    Fast气缸_C_48(IO_st气缸 := ast气缸[48]);
+    Fast气缸_C_49(IO_st气缸 := ast气缸[49]);
+	 
 END_IF;
 
-//Fast轴_C_1(IO_st轴 := ast轴[1], IO_sys轴 := AXIS_1);
+
+---------------------------------------------------------
+
+
 IF TRUE THEN
+
 Fast轴_C_1(IO_st轴 := ast轴[1], IO_sys轴 := AXIS_1);
 Fast轴_C_2(IO_st轴 := ast轴[2], IO_sys轴 := AXIS_2);
 Fast轴_C_3(IO_st轴 := ast轴[3], IO_sys轴 := AXIS_3);
@@ -48,9 +68,16 @@ Fast轴_C_7(IO_st轴 := ast轴[7], IO_sys轴 := AXIS_7);
 Fast轴_C_8(IO_st轴 := ast轴[8], IO_sys轴 := AXIS_8);
 Fast轴_C_9(IO_st轴 := ast轴[9], IO_sys轴 := AXIS_9);
 Fast轴_C_10(IO_st轴 := ast轴[10], IO_sys轴 := AXIS_10);
-	; 
-ELSE
-	; 
+Fast轴_C_11(IO_st轴 := ast轴[11], IO_sys轴 := AXIS_11);
+Fast轴_C_12(IO_st轴 := ast轴[12], IO_sys轴 := AXIS_12);
+Fast轴_C_13(IO_st轴 := ast轴[13], IO_sys轴 := AXIS_13);
+Fast轴_C_14(IO_st轴 := ast轴[14], IO_sys轴 := AXIS_14);
+Fast轴_C_15(IO_st轴 := ast轴[15], IO_sys轴 := AXIS_15);
+Fast轴_C_16(IO_st轴 := ast轴[16], IO_sys轴 := AXIS_16);
+Fast轴_C_17(IO_st轴 := ast轴[17], IO_sys轴 := AXIS_17);
+Fast轴_C_18(IO_st轴 := ast轴[18], IO_sys轴 := AXIS_18);
+Fast轴_C_19(IO_st轴 := ast轴[19], IO_sys轴 := AXIS_19);
+
 END_IF;
 
 //FP_C_1(InStep := PP[1]);
