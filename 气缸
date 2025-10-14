@@ -1,1127 +1,993 @@
+REGION 气缸
 
-// 气缸1
-IF TRUE THEN
-    ast气缸[1].s名称    :='气缸1';
-    ast气缸[1].b动点条件:=TRUE;  
-    ast气缸[1].b原点条件:=TRUE;
-    ast气缸[1].i类型    :=0; //0:单控阀
-    ast气缸[1].b急停    :=b急停;
-    ast气缸[1].b暂停    :=b暂停;
-    ast气缸[1].b复位    :=b复位;
-    ast气缸[1].b手动    :=UN_b手动模式中;
-    ast气缸[1].b自动    :=UN_b自动模式中;
-    ast气缸[1].b动点信号:=SPARE;
-    ast气缸[1].b原点信号:=SPARE;
-    SPARE := ast气缸[1].b动点输出;
-    SPARE := ast气缸[1].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[1].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[1].i命令:=4;
-    END_IF;
+REGION 气缸1
+ast气缸[1].s名称    :='气缸1';
+ast气缸[1].b动点条件:=TRUE;  
+ast气缸[1].b原点条件:=TRUE;
+ast气缸[1].i类型    :=0; //0:单控阀
+ast气缸[1].b急停    :=b急停;
+ast气缸[1].b暂停    :=b暂停;
+ast气缸[1].b复位    :=b复位;
+ast气缸[1].b手动    :=UN_b手动模式中;
+ast气缸[1].b自动    :=UN_b自动模式中;
+ast气缸[1].b动点信号:=SPARE;
+ast气缸[1].b原点信号:=SPARE;
+SPARE := ast气缸[1].b动点输出;
+SPARE := ast气缸[1].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[1].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[1].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸2
-IF TRUE THEN
-    ast气缸[2].s名称    :='气缸2';
-    ast气缸[2].b动点条件:=TRUE;  
-    ast气缸[2].b原点条件:=TRUE;
-    ast气缸[2].i类型    :=0; //0:单控阀
-    ast气缸[2].b急停    :=b急停;
-    ast气缸[2].b暂停    :=b暂停;
-    ast气缸[2].b复位    :=b复位;
-    ast气缸[2].b手动    :=UN_b手动模式中;
-    ast气缸[2].b自动    :=UN_b自动模式中;
-    ast气缸[2].b动点信号:=SPARE;
-    ast气缸[2].b原点信号:=SPARE;
-    SPARE := ast气缸[2].b动点输出;
-    SPARE := ast气缸[2].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[2].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[2].i命令:=4;
-    END_IF;
+REGION 气缸2
+ast气缸[2].s名称    :='气缸2';
+ast气缸[2].b动点条件:=TRUE;  
+ast气缸[2].b原点条件:=TRUE;
+ast气缸[2].i类型    :=0; //0:单控阀
+ast气缸[2].b急停    :=b急停;
+ast气缸[2].b暂停    :=b暂停;
+ast气缸[2].b复位    :=b复位;
+ast气缸[2].b手动    :=UN_b手动模式中;
+ast气缸[2].b自动    :=UN_b自动模式中;
+ast气缸[2].b动点信号:=SPARE;
+ast气缸[2].b原点信号:=SPARE;
+SPARE := ast气缸[2].b动点输出;
+SPARE := ast气缸[2].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[2].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[2].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸3
-IF TRUE THEN
-    ast气缸[3].s名称    :='气缸3';
-    ast气缸[3].b动点条件:=TRUE;  
-    ast气缸[3].b原点条件:=TRUE;
-    ast气缸[3].i类型    :=0; //0:单控阀
-    ast气缸[3].b急停    :=b急停;
-    ast气缸[3].b暂停    :=b暂停;
-    ast气缸[3].b复位    :=b复位;
-    ast气缸[3].b手动    :=UN_b手动模式中;
-    ast气缸[3].b自动    :=UN_b自动模式中;
-    ast气缸[3].b动点信号:=SPARE;
-    ast气缸[3].b原点信号:=SPARE;
-    SPARE := ast气缸[3].b动点输出;
-    SPARE := ast气缸[3].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[3].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[3].i命令:=4;
-    END_IF;
+REGION 气缸3
+ast气缸[3].s名称    :='气缸3';
+ast气缸[3].b动点条件:=TRUE;  
+ast气缸[3].b原点条件:=TRUE;
+ast气缸[3].i类型    :=0; //0:单控阀
+ast气缸[3].b急停    :=b急停;
+ast气缸[3].b暂停    :=b暂停;
+ast气缸[3].b复位    :=b复位;
+ast气缸[3].b手动    :=UN_b手动模式中;
+ast气缸[3].b自动    :=UN_b自动模式中;
+ast气缸[3].b动点信号:=SPARE;
+ast气缸[3].b原点信号:=SPARE;
+SPARE := ast气缸[3].b动点输出;
+SPARE := ast气缸[3].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[3].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[3].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸4
-IF TRUE THEN
-    ast气缸[4].s名称    :='气缸4';
-    ast气缸[4].b动点条件:=TRUE;  
-    ast气缸[4].b原点条件:=TRUE;
-    ast气缸[4].i类型    :=0; //0:单控阀
-    ast气缸[4].b急停    :=b急停;
-    ast气缸[4].b暂停    :=b暂停;
-    ast气缸[4].b复位    :=b复位;
-    ast气缸[4].b手动    :=UN_b手动模式中;
-    ast气缸[4].b自动    :=UN_b自动模式中;
-    ast气缸[4].b动点信号:=SPARE;
-    ast气缸[4].b原点信号:=SPARE;
-    SPARE := ast气缸[4].b动点输出;
-    SPARE := ast气缸[4].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[4].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[4].i命令:=4;
-    END_IF;
+REGION 气缸4
+ast气缸[4].s名称    :='气缸4';
+ast气缸[4].b动点条件:=TRUE;  
+ast气缸[4].b原点条件:=TRUE;
+ast气缸[4].i类型    :=0; //0:单控阀
+ast气缸[4].b急停    :=b急停;
+ast气缸[4].b暂停    :=b暂停;
+ast气缸[4].b复位    :=b复位;
+ast气缸[4].b手动    :=UN_b手动模式中;
+ast气缸[4].b自动    :=UN_b自动模式中;
+ast气缸[4].b动点信号:=SPARE;
+ast气缸[4].b原点信号:=SPARE;
+SPARE := ast气缸[4].b动点输出;
+SPARE := ast气缸[4].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[4].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[4].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸5
-IF TRUE THEN
-    ast气缸[5].s名称    :='气缸5';
-    ast气缸[5].b动点条件:=TRUE;  
-    ast气缸[5].b原点条件:=TRUE;
-    ast气缸[5].i类型    :=0; //0:单控阀
-    ast气缸[5].b急停    :=b急停;
-    ast气缸[5].b暂停    :=b暂停;
-    ast气缸[5].b复位    :=b复位;
-    ast气缸[5].b手动    :=UN_b手动模式中;
-    ast气缸[5].b自动    :=UN_b自动模式中;
-    ast气缸[5].b动点信号:=SPARE;
-    ast气缸[5].b原点信号:=SPARE;
-    SPARE := ast气缸[5].b动点输出;
-    SPARE := ast气缸[5].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[5].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[5].i命令:=4;
-    END_IF;
+REGION 气缸5
+ast气缸[5].s名称    :='气缸5';
+ast气缸[5].b动点条件:=TRUE;  
+ast气缸[5].b原点条件:=TRUE;
+ast气缸[5].i类型    :=0; //0:单控阀
+ast气缸[5].b急停    :=b急停;
+ast气缸[5].b暂停    :=b暂停;
+ast气缸[5].b复位    :=b复位;
+ast气缸[5].b手动    :=UN_b手动模式中;
+ast气缸[5].b自动    :=UN_b自动模式中;
+ast气缸[5].b动点信号:=SPARE;
+ast气缸[5].b原点信号:=SPARE;
+SPARE := ast气缸[5].b动点输出;
+SPARE := ast气缸[5].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[5].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[5].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸6
-IF TRUE THEN
-    ast气缸[6].s名称    :='气缸6';
-    ast气缸[6].b动点条件:=TRUE;  
-    ast气缸[6].b原点条件:=TRUE;
-    ast气缸[6].i类型    :=0; //0:单控阀
-    ast气缸[6].b急停    :=b急停;
-    ast气缸[6].b暂停    :=b暂停;
-    ast气缸[6].b复位    :=b复位;
-    ast气缸[6].b手动    :=UN_b手动模式中;
-    ast气缸[6].b自动    :=UN_b自动模式中;
-    ast气缸[6].b动点信号:=SPARE;
-    ast气缸[6].b原点信号:=SPARE;
-    SPARE := ast气缸[6].b动点输出;
-    SPARE := ast气缸[6].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[6].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[6].i命令:=4;
-    END_IF;
+REGION 气缸6
+ast气缸[6].s名称    :='气缸6';
+ast气缸[6].b动点条件:=TRUE;  
+ast气缸[6].b原点条件:=TRUE;
+ast气缸[6].i类型    :=0; //0:单控阀
+ast气缸[6].b急停    :=b急停;
+ast气缸[6].b暂停    :=b暂停;
+ast气缸[6].b复位    :=b复位;
+ast气缸[6].b手动    :=UN_b手动模式中;
+ast气缸[6].b自动    :=UN_b自动模式中;
+ast气缸[6].b动点信号:=SPARE;
+ast气缸[6].b原点信号:=SPARE;
+SPARE := ast气缸[6].b动点输出;
+SPARE := ast气缸[6].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[6].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[6].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸7
-IF TRUE THEN
-    ast气缸[7].s名称    :='气缸7';
-    ast气缸[7].b动点条件:=TRUE;  
-    ast气缸[7].b原点条件:=TRUE;
-    ast气缸[7].i类型    :=0; //0:单控阀
-    ast气缸[7].b急停    :=b急停;
-    ast气缸[7].b暂停    :=b暂停;
-    ast气缸[7].b复位    :=b复位;
-    ast气缸[7].b手动    :=UN_b手动模式中;
-    ast气缸[7].b自动    :=UN_b自动模式中;
-    ast气缸[7].b动点信号:=SPARE;
-    ast气缸[7].b原点信号:=SPARE;
-    SPARE := ast气缸[7].b动点输出;
-    SPARE := ast气缸[7].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[7].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[7].i命令:=4;
-    END_IF;
+REGION 气缸7
+ast气缸[7].s名称    :='气缸7';
+ast气缸[7].b动点条件:=TRUE;  
+ast气缸[7].b原点条件:=TRUE;
+ast气缸[7].i类型    :=0; //0:单控阀
+ast气缸[7].b急停    :=b急停;
+ast气缸[7].b暂停    :=b暂停;
+ast气缸[7].b复位    :=b复位;
+ast气缸[7].b手动    :=UN_b手动模式中;
+ast气缸[7].b自动    :=UN_b自动模式中;
+ast气缸[7].b动点信号:=SPARE;
+ast气缸[7].b原点信号:=SPARE;
+SPARE := ast气缸[7].b动点输出;
+SPARE := ast气缸[7].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[7].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[7].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸8
-IF TRUE THEN
-    ast气缸[8].s名称    :='气缸8';
-    ast气缸[8].b动点条件:=TRUE;  
-    ast气缸[8].b原点条件:=TRUE;
-    ast气缸[8].i类型    :=0; //0:单控阀
-    ast气缸[8].b急停    :=b急停;
-    ast气缸[8].b暂停    :=b暂停;
-    ast气缸[8].b复位    :=b复位;
-    ast气缸[8].b手动    :=UN_b手动模式中;
-    ast气缸[8].b自动    :=UN_b自动模式中;
-    ast气缸[8].b动点信号:=SPARE;
-    ast气缸[8].b原点信号:=SPARE;
-    SPARE := ast气缸[8].b动点输出;
-    SPARE := ast气缸[8].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[8].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[8].i命令:=4;
-    END_IF;
+REGION 气缸8
+ast气缸[8].s名称    :='气缸8';
+ast气缸[8].b动点条件:=TRUE;  
+ast气缸[8].b原点条件:=TRUE;
+ast气缸[8].i类型    :=0; //0:单控阀
+ast气缸[8].b急停    :=b急停;
+ast气缸[8].b暂停    :=b暂停;
+ast气缸[8].b复位    :=b复位;
+ast气缸[8].b手动    :=UN_b手动模式中;
+ast气缸[8].b自动    :=UN_b自动模式中;
+ast气缸[8].b动点信号:=SPARE;
+ast气缸[8].b原点信号:=SPARE;
+SPARE := ast气缸[8].b动点输出;
+SPARE := ast气缸[8].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[8].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[8].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸9
-IF TRUE THEN
-    ast气缸[9].s名称    :='气缸9';
-    ast气缸[9].b动点条件:=TRUE;  
-    ast气缸[9].b原点条件:=TRUE;
-    ast气缸[9].i类型    :=0; //0:单控阀
-    ast气缸[9].b急停    :=b急停;
-    ast气缸[9].b暂停    :=b暂停;
-    ast气缸[9].b复位    :=b复位;
-    ast气缸[9].b手动    :=UN_b手动模式中;
-    ast气缸[9].b自动    :=UN_b自动模式中;
-    ast气缸[9].b动点信号:=SPARE;
-    ast气缸[9].b原点信号:=SPARE;
-    SPARE := ast气缸[9].b动点输出;
-    SPARE := ast气缸[9].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[9].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[9].i命令:=4;
-    END_IF;
+REGION 气缸9
+ast气缸[9].s名称    :='气缸9';
+ast气缸[9].b动点条件:=TRUE;  
+ast气缸[9].b原点条件:=TRUE;
+ast气缸[9].i类型    :=0; //0:单控阀
+ast气缸[9].b急停    :=b急停;
+ast气缸[9].b暂停    :=b暂停;
+ast气缸[9].b复位    :=b复位;
+ast气缸[9].b手动    :=UN_b手动模式中;
+ast气缸[9].b自动    :=UN_b自动模式中;
+ast气缸[9].b动点信号:=SPARE;
+ast气缸[9].b原点信号:=SPARE;
+SPARE := ast气缸[9].b动点输出;
+SPARE := ast气缸[9].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[9].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[9].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸10
-IF TRUE THEN
-    ast气缸[10].s名称    :='气缸10';
-    ast气缸[10].b动点条件:=TRUE;  
-    ast气缸[10].b原点条件:=TRUE;
-    ast气缸[10].i类型    :=0; //0:单控阀
-    ast气缸[10].b急停    :=b急停;
-    ast气缸[10].b暂停    :=b暂停;
-    ast气缸[10].b复位    :=b复位;
-    ast气缸[10].b手动    :=UN_b手动模式中;
-    ast气缸[10].b自动    :=UN_b自动模式中;
-    ast气缸[10].b动点信号:=SPARE;
-    ast气缸[10].b原点信号:=SPARE;
-    SPARE := ast气缸[10].b动点输出;
-    SPARE := ast气缸[10].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[10].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[10].i命令:=4;
-    END_IF;
+REGION 气缸10
+ast气缸[10].s名称    :='气缸10';
+ast气缸[10].b动点条件:=TRUE;  
+ast气缸[10].b原点条件:=TRUE;
+ast气缸[10].i类型    :=0; //0:单控阀
+ast气缸[10].b急停    :=b急停;
+ast气缸[10].b暂停    :=b暂停;
+ast气缸[10].b复位    :=b复位;
+ast气缸[10].b手动    :=UN_b手动模式中;
+ast气缸[10].b自动    :=UN_b自动模式中;
+ast气缸[10].b动点信号:=SPARE;
+ast气缸[10].b原点信号:=SPARE;
+SPARE := ast气缸[10].b动点输出;
+SPARE := ast气缸[10].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[10].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[10].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸11
-IF TRUE THEN
-    ast气缸[11].s名称    :='气缸11';
-    ast气缸[11].b动点条件:=TRUE;  
-    ast气缸[11].b原点条件:=TRUE;
-    ast气缸[11].i类型    :=0; //0:单控阀
-    ast气缸[11].b急停    :=b急停;
-    ast气缸[11].b暂停    :=b暂停;
-    ast气缸[11].b复位    :=b复位;
-    ast气缸[11].b手动    :=UN_b手动模式中;
-    ast气缸[11].b自动    :=UN_b自动模式中;
-    ast气缸[11].b动点信号:=SPARE;
-    ast气缸[11].b原点信号:=SPARE;
-    SPARE := ast气缸[11].b动点输出;
-    SPARE := ast气缸[11].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[11].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[11].i命令:=4;
-    END_IF;
+REGION 气缸11
+ast气缸[11].s名称    :='气缸11';
+ast气缸[11].b动点条件:=TRUE;  
+ast气缸[11].b原点条件:=TRUE;
+ast气缸[11].i类型    :=0; //0:单控阀
+ast气缸[11].b急停    :=b急停;
+ast气缸[11].b暂停    :=b暂停;
+ast气缸[11].b复位    :=b复位;
+ast气缸[11].b手动    :=UN_b手动模式中;
+ast气缸[11].b自动    :=UN_b自动模式中;
+ast气缸[11].b动点信号:=SPARE;
+ast气缸[11].b原点信号:=SPARE;
+SPARE := ast气缸[11].b动点输出;
+SPARE := ast气缸[11].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[11].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[11].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸12
-IF TRUE THEN
-    ast气缸[12].s名称    :='气缸12';
-    ast气缸[12].b动点条件:=TRUE;  
-    ast气缸[12].b原点条件:=TRUE;
-    ast气缸[12].i类型    :=0; //0:单控阀
-    ast气缸[12].b急停    :=b急停;
-    ast气缸[12].b暂停    :=b暂停;
-    ast气缸[12].b复位    :=b复位;
-    ast气缸[12].b手动    :=UN_b手动模式中;
-    ast气缸[12].b自动    :=UN_b自动模式中;
-    ast气缸[12].b动点信号:=SPARE;
-    ast气缸[12].b原点信号:=SPARE;
-    SPARE := ast气缸[12].b动点输出;
-    SPARE := ast气缸[12].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[12].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[12].i命令:=4;
-    END_IF;
+REGION 气缸12
+ast气缸[12].s名称    :='气缸12';
+ast气缸[12].b动点条件:=TRUE;  
+ast气缸[12].b原点条件:=TRUE;
+ast气缸[12].i类型    :=0; //0:单控阀
+ast气缸[12].b急停    :=b急停;
+ast气缸[12].b暂停    :=b暂停;
+ast气缸[12].b复位    :=b复位;
+ast气缸[12].b手动    :=UN_b手动模式中;
+ast气缸[12].b自动    :=UN_b自动模式中;
+ast气缸[12].b动点信号:=SPARE;
+ast气缸[12].b原点信号:=SPARE;
+SPARE := ast气缸[12].b动点输出;
+SPARE := ast气缸[12].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[12].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[12].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸13
-IF TRUE THEN
-    ast气缸[13].s名称    :='气缸13';
-    ast气缸[13].b动点条件:=TRUE;  
-    ast气缸[13].b原点条件:=TRUE;
-    ast气缸[13].i类型    :=0; //0:单控阀
-    ast气缸[13].b急停    :=b急停;
-    ast气缸[13].b暂停    :=b暂停;
-    ast气缸[13].b复位    :=b复位;
-    ast气缸[13].b手动    :=UN_b手动模式中;
-    ast气缸[13].b自动    :=UN_b自动模式中;
-    ast气缸[13].b动点信号:=SPARE;
-    ast气缸[13].b原点信号:=SPARE;
-    SPARE := ast气缸[13].b动点输出;
-    SPARE := ast气缸[13].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[13].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[13].i命令:=4;
-    END_IF;
+REGION 气缸13
+ast气缸[13].s名称    :='气缸13';
+ast气缸[13].b动点条件:=TRUE;  
+ast气缸[13].b原点条件:=TRUE;
+ast气缸[13].i类型    :=0; //0:单控阀
+ast气缸[13].b急停    :=b急停;
+ast气缸[13].b暂停    :=b暂停;
+ast气缸[13].b复位    :=b复位;
+ast气缸[13].b手动    :=UN_b手动模式中;
+ast气缸[13].b自动    :=UN_b自动模式中;
+ast气缸[13].b动点信号:=SPARE;
+ast气缸[13].b原点信号:=SPARE;
+SPARE := ast气缸[13].b动点输出;
+SPARE := ast气缸[13].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[13].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[13].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸14
-IF TRUE THEN
-    ast气缸[14].s名称    :='气缸14';
-    ast气缸[14].b动点条件:=TRUE;  
-    ast气缸[14].b原点条件:=TRUE;
-    ast气缸[14].i类型    :=0; //0:单控阀
-    ast气缸[14].b急停    :=b急停;
-    ast气缸[14].b暂停    :=b暂停;
-    ast气缸[14].b复位    :=b复位;
-    ast气缸[14].b手动    :=UN_b手动模式中;
-    ast气缸[14].b自动    :=UN_b自动模式中;
-    ast气缸[14].b动点信号:=SPARE;
-    ast气缸[14].b原点信号:=SPARE;
-    SPARE := ast气缸[14].b动点输出;
-    SPARE := ast气缸[14].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[14].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[14].i命令:=4;
-    END_IF;
+REGION 气缸14
+ast气缸[14].s名称    :='气缸14';
+ast气缸[14].b动点条件:=TRUE;  
+ast气缸[14].b原点条件:=TRUE;
+ast气缸[14].i类型    :=0; //0:单控阀
+ast气缸[14].b急停    :=b急停;
+ast气缸[14].b暂停    :=b暂停;
+ast气缸[14].b复位    :=b复位;
+ast气缸[14].b手动    :=UN_b手动模式中;
+ast气缸[14].b自动    :=UN_b自动模式中;
+ast气缸[14].b动点信号:=SPARE;
+ast气缸[14].b原点信号:=SPARE;
+SPARE := ast气缸[14].b动点输出;
+SPARE := ast气缸[14].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[14].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[14].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸15
-IF TRUE THEN
-    ast气缸[15].s名称    :='气缸15';
-    ast气缸[15].b动点条件:=TRUE;  
-    ast气缸[15].b原点条件:=TRUE;
-    ast气缸[15].i类型    :=0; //0:单控阀
-    ast气缸[15].b急停    :=b急停;
-    ast气缸[15].b暂停    :=b暂停;
-    ast气缸[15].b复位    :=b复位;
-    ast气缸[15].b手动    :=UN_b手动模式中;
-    ast气缸[15].b自动    :=UN_b自动模式中;
-    ast气缸[15].b动点信号:=SPARE;
-    ast气缸[15].b原点信号:=SPARE;
-    SPARE := ast气缸[15].b动点输出;
-    SPARE := ast气缸[15].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[15].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[15].i命令:=4;
-    END_IF;
+REGION 气缸15
+ast气缸[15].s名称    :='气缸15';
+ast气缸[15].b动点条件:=TRUE;  
+ast气缸[15].b原点条件:=TRUE;
+ast气缸[15].i类型    :=0; //0:单控阀
+ast气缸[15].b急停    :=b急停;
+ast气缸[15].b暂停    :=b暂停;
+ast气缸[15].b复位    :=b复位;
+ast气缸[15].b手动    :=UN_b手动模式中;
+ast气缸[15].b自动    :=UN_b自动模式中;
+ast气缸[15].b动点信号:=SPARE;
+ast气缸[15].b原点信号:=SPARE;
+SPARE := ast气缸[15].b动点输出;
+SPARE := ast气缸[15].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[15].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[15].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸16
-IF TRUE THEN
-    ast气缸[16].s名称    :='气缸16';
-    ast气缸[16].b动点条件:=TRUE;  
-    ast气缸[16].b原点条件:=TRUE;
-    ast气缸[16].i类型    :=0; //0:单控阀
-    ast气缸[16].b急停    :=b急停;
-    ast气缸[16].b暂停    :=b暂停;
-    ast气缸[16].b复位    :=b复位;
-    ast气缸[16].b手动    :=UN_b手动模式中;
-    ast气缸[16].b自动    :=UN_b自动模式中;
-    ast气缸[16].b动点信号:=SPARE;
-    ast气缸[16].b原点信号:=SPARE;
-    SPARE := ast气缸[16].b动点输出;
-    SPARE := ast气缸[16].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[16].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[16].i命令:=4;
-    END_IF;
+REGION 气缸16
+ast气缸[16].s名称    :='气缸16';
+ast气缸[16].b动点条件:=TRUE;  
+ast气缸[16].b原点条件:=TRUE;
+ast气缸[16].i类型    :=0; //0:单控阀
+ast气缸[16].b急停    :=b急停;
+ast气缸[16].b暂停    :=b暂停;
+ast气缸[16].b复位    :=b复位;
+ast气缸[16].b手动    :=UN_b手动模式中;
+ast气缸[16].b自动    :=UN_b自动模式中;
+ast气缸[16].b动点信号:=SPARE;
+ast气缸[16].b原点信号:=SPARE;
+SPARE := ast气缸[16].b动点输出;
+SPARE := ast气缸[16].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[16].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[16].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸17
-IF TRUE THEN
-    ast气缸[17].s名称    :='气缸17';
-    ast气缸[17].b动点条件:=TRUE;  
-    ast气缸[17].b原点条件:=TRUE;
-    ast气缸[17].i类型    :=0; //0:单控阀
-    ast气缸[17].b急停    :=b急停;
-    ast气缸[17].b暂停    :=b暂停;
-    ast气缸[17].b复位    :=b复位;
-    ast气缸[17].b手动    :=UN_b手动模式中;
-    ast气缸[17].b自动    :=UN_b自动模式中;
-    ast气缸[17].b动点信号:=SPARE;
-    ast气缸[17].b原点信号:=SPARE;
-    SPARE := ast气缸[17].b动点输出;
-    SPARE := ast气缸[17].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[17].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[17].i命令:=4;
-    END_IF;
+REGION 气缸17
+ast气缸[17].s名称    :='气缸17';
+ast气缸[17].b动点条件:=TRUE;  
+ast气缸[17].b原点条件:=TRUE;
+ast气缸[17].i类型    :=0; //0:单控阀
+ast气缸[17].b急停    :=b急停;
+ast气缸[17].b暂停    :=b暂停;
+ast气缸[17].b复位    :=b复位;
+ast气缸[17].b手动    :=UN_b手动模式中;
+ast气缸[17].b自动    :=UN_b自动模式中;
+ast气缸[17].b动点信号:=SPARE;
+ast气缸[17].b原点信号:=SPARE;
+SPARE := ast气缸[17].b动点输出;
+SPARE := ast气缸[17].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[17].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[17].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸18
-IF TRUE THEN
-    ast气缸[18].s名称    :='气缸18';
-    ast气缸[18].b动点条件:=TRUE;  
-    ast气缸[18].b原点条件:=TRUE;
-    ast气缸[18].i类型    :=0; //0:单控阀
-    ast气缸[18].b急停    :=b急停;
-    ast气缸[18].b暂停    :=b暂停;
-    ast气缸[18].b复位    :=b复位;
-    ast气缸[18].b手动    :=UN_b手动模式中;
-    ast气缸[18].b自动    :=UN_b自动模式中;
-    ast气缸[18].b动点信号:=SPARE;
-    ast气缸[18].b原点信号:=SPARE;
-    SPARE := ast气缸[18].b动点输出;
-    SPARE := ast气缸[18].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[18].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[18].i命令:=4;
-    END_IF;
+REGION 气缸18
+ast气缸[18].s名称    :='气缸18';
+ast气缸[18].b动点条件:=TRUE;  
+ast气缸[18].b原点条件:=TRUE;
+ast气缸[18].i类型    :=0; //0:单控阀
+ast气缸[18].b急停    :=b急停;
+ast气缸[18].b暂停    :=b暂停;
+ast气缸[18].b复位    :=b复位;
+ast气缸[18].b手动    :=UN_b手动模式中;
+ast气缸[18].b自动    :=UN_b自动模式中;
+ast气缸[18].b动点信号:=SPARE;
+ast气缸[18].b原点信号:=SPARE;
+SPARE := ast气缸[18].b动点输出;
+SPARE := ast气缸[18].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[18].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[18].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸19
-IF TRUE THEN
-    ast气缸[19].s名称    :='气缸19';
-    ast气缸[19].b动点条件:=TRUE;  
-    ast气缸[19].b原点条件:=TRUE;
-    ast气缸[19].i类型    :=0; //0:单控阀
-    ast气缸[19].b急停    :=b急停;
-    ast气缸[19].b暂停    :=b暂停;
-    ast气缸[19].b复位    :=b复位;
-    ast气缸[19].b手动    :=UN_b手动模式中;
-    ast气缸[19].b自动    :=UN_b自动模式中;
-    ast气缸[19].b动点信号:=SPARE;
-    ast气缸[19].b原点信号:=SPARE;
-    SPARE := ast气缸[19].b动点输出;
-    SPARE := ast气缸[19].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[19].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[19].i命令:=4;
-    END_IF;
+REGION 气缸19
+ast气缸[19].s名称    :='气缸19';
+ast气缸[19].b动点条件:=TRUE;  
+ast气缸[19].b原点条件:=TRUE;
+ast气缸[19].i类型    :=0; //0:单控阀
+ast气缸[19].b急停    :=b急停;
+ast气缸[19].b暂停    :=b暂停;
+ast气缸[19].b复位    :=b复位;
+ast气缸[19].b手动    :=UN_b手动模式中;
+ast气缸[19].b自动    :=UN_b自动模式中;
+ast气缸[19].b动点信号:=SPARE;
+ast气缸[19].b原点信号:=SPARE;
+SPARE := ast气缸[19].b动点输出;
+SPARE := ast气缸[19].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[19].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[19].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸20
-IF TRUE THEN
-    ast气缸[20].s名称    :='气缸20';
-    ast气缸[20].b动点条件:=TRUE;  
-    ast气缸[20].b原点条件:=TRUE;
-    ast气缸[20].i类型    :=0; //0:单控阀
-    ast气缸[20].b急停    :=b急停;
-    ast气缸[20].b暂停    :=b暂停;
-    ast气缸[20].b复位    :=b复位;
-    ast气缸[20].b手动    :=UN_b手动模式中;
-    ast气缸[20].b自动    :=UN_b自动模式中;
-    ast气缸[20].b动点信号:=SPARE;
-    ast气缸[20].b原点信号:=SPARE;
-    SPARE := ast气缸[20].b动点输出;
-    SPARE := ast气缸[20].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[20].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[20].i命令:=4;
-    END_IF;
+REGION 气缸20
+ast气缸[20].s名称    :='气缸20';
+ast气缸[20].b动点条件:=TRUE;  
+ast气缸[20].b原点条件:=TRUE;
+ast气缸[20].i类型    :=0; //0:单控阀
+ast气缸[20].b急停    :=b急停;
+ast气缸[20].b暂停    :=b暂停;
+ast气缸[20].b复位    :=b复位;
+ast气缸[20].b手动    :=UN_b手动模式中;
+ast气缸[20].b自动    :=UN_b自动模式中;
+ast气缸[20].b动点信号:=SPARE;
+ast气缸[20].b原点信号:=SPARE;
+SPARE := ast气缸[20].b动点输出;
+SPARE := ast气缸[20].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[20].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[20].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸21
-IF TRUE THEN
-    ast气缸[21].s名称    :='气缸21';
-    ast气缸[21].b动点条件:=TRUE;  
-    ast气缸[21].b原点条件:=TRUE;
-    ast气缸[21].i类型    :=0; //0:单控阀
-    ast气缸[21].b急停    :=b急停;
-    ast气缸[21].b暂停    :=b暂停;
-    ast气缸[21].b复位    :=b复位;
-    ast气缸[21].b手动    :=UN_b手动模式中;
-    ast气缸[21].b自动    :=UN_b自动模式中;
-    ast气缸[21].b动点信号:=SPARE;
-    ast气缸[21].b原点信号:=SPARE;
-    SPARE := ast气缸[21].b动点输出;
-    SPARE := ast气缸[21].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[21].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[21].i命令:=4;
-    END_IF;
+REGION 气缸21
+ast气缸[21].s名称    :='气缸21';
+ast气缸[21].b动点条件:=TRUE;  
+ast气缸[21].b原点条件:=TRUE;
+ast气缸[21].i类型    :=0; //0:单控阀
+ast气缸[21].b急停    :=b急停;
+ast气缸[21].b暂停    :=b暂停;
+ast气缸[21].b复位    :=b复位;
+ast气缸[21].b手动    :=UN_b手动模式中;
+ast气缸[21].b自动    :=UN_b自动模式中;
+ast气缸[21].b动点信号:=SPARE;
+ast气缸[21].b原点信号:=SPARE;
+SPARE := ast气缸[21].b动点输出;
+SPARE := ast气缸[21].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[21].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[21].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸22
-IF TRUE THEN
-    ast气缸[22].s名称    :='气缸22';
-    ast气缸[22].b动点条件:=TRUE;  
-    ast气缸[22].b原点条件:=TRUE;
-    ast气缸[22].i类型    :=0; //0:单控阀
-    ast气缸[22].b急停    :=b急停;
-    ast气缸[22].b暂停    :=b暂停;
-    ast气缸[22].b复位    :=b复位;
-    ast气缸[22].b手动    :=UN_b手动模式中;
-    ast气缸[22].b自动    :=UN_b自动模式中;
-    ast气缸[22].b动点信号:=SPARE;
-    ast气缸[22].b原点信号:=SPARE;
-    SPARE := ast气缸[22].b动点输出;
-    SPARE := ast气缸[22].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[22].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[22].i命令:=4;
-    END_IF;
+REGION 气缸22
+ast气缸[22].s名称    :='气缸22';
+ast气缸[22].b动点条件:=TRUE;  
+ast气缸[22].b原点条件:=TRUE;
+ast气缸[22].i类型    :=0; //0:单控阀
+ast气缸[22].b急停    :=b急停;
+ast气缸[22].b暂停    :=b暂停;
+ast气缸[22].b复位    :=b复位;
+ast气缸[22].b手动    :=UN_b手动模式中;
+ast气缸[22].b自动    :=UN_b自动模式中;
+ast气缸[22].b动点信号:=SPARE;
+ast气缸[22].b原点信号:=SPARE;
+SPARE := ast气缸[22].b动点输出;
+SPARE := ast气缸[22].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[22].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[22].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸23
-IF TRUE THEN
-    ast气缸[23].s名称    :='气缸23';
-    ast气缸[23].b动点条件:=TRUE;  
-    ast气缸[23].b原点条件:=TRUE;
-    ast气缸[23].i类型    :=0; //0:单控阀
-    ast气缸[23].b急停    :=b急停;
-    ast气缸[23].b暂停    :=b暂停;
-    ast气缸[23].b复位    :=b复位;
-    ast气缸[23].b手动    :=UN_b手动模式中;
-    ast气缸[23].b自动    :=UN_b自动模式中;
-    ast气缸[23].b动点信号:=SPARE;
-    ast气缸[23].b原点信号:=SPARE;
-    SPARE := ast气缸[23].b动点输出;
-    SPARE := ast气缸[23].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[23].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[23].i命令:=4;
-    END_IF;
+REGION 气缸23
+ast气缸[23].s名称    :='气缸23';
+ast气缸[23].b动点条件:=TRUE;  
+ast气缸[23].b原点条件:=TRUE;
+ast气缸[23].i类型    :=0; //0:单控阀
+ast气缸[23].b急停    :=b急停;
+ast气缸[23].b暂停    :=b暂停;
+ast气缸[23].b复位    :=b复位;
+ast气缸[23].b手动    :=UN_b手动模式中;
+ast气缸[23].b自动    :=UN_b自动模式中;
+ast气缸[23].b动点信号:=SPARE;
+ast气缸[23].b原点信号:=SPARE;
+SPARE := ast气缸[23].b动点输出;
+SPARE := ast气缸[23].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[23].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[23].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸24
-IF TRUE THEN
-    ast气缸[24].s名称    :='气缸24';
-    ast气缸[24].b动点条件:=TRUE;  
-    ast气缸[24].b原点条件:=TRUE;
-    ast气缸[24].i类型    :=0; //0:单控阀
-    ast气缸[24].b急停    :=b急停;
-    ast气缸[24].b暂停    :=b暂停;
-    ast气缸[24].b复位    :=b复位;
-    ast气缸[24].b手动    :=UN_b手动模式中;
-    ast气缸[24].b自动    :=UN_b自动模式中;
-    ast气缸[24].b动点信号:=SPARE;
-    ast气缸[24].b原点信号:=SPARE;
-    SPARE := ast气缸[24].b动点输出;
-    SPARE := ast气缸[24].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[24].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[24].i命令:=4;
-    END_IF;
+REGION 气缸24
+ast气缸[24].s名称    :='气缸24';
+ast气缸[24].b动点条件:=TRUE;  
+ast气缸[24].b原点条件:=TRUE;
+ast气缸[24].i类型    :=0; //0:单控阀
+ast气缸[24].b急停    :=b急停;
+ast气缸[24].b暂停    :=b暂停;
+ast气缸[24].b复位    :=b复位;
+ast气缸[24].b手动    :=UN_b手动模式中;
+ast气缸[24].b自动    :=UN_b自动模式中;
+ast气缸[24].b动点信号:=SPARE;
+ast气缸[24].b原点信号:=SPARE;
+SPARE := ast气缸[24].b动点输出;
+SPARE := ast气缸[24].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[24].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[24].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸25
-IF TRUE THEN
-    ast气缸[25].s名称    :='气缸25';
-    ast气缸[25].b动点条件:=TRUE;  
-    ast气缸[25].b原点条件:=TRUE;
-    ast气缸[25].i类型    :=0; //0:单控阀
-    ast气缸[25].b急停    :=b急停;
-    ast气缸[25].b暂停    :=b暂停;
-    ast气缸[25].b复位    :=b复位;
-    ast气缸[25].b手动    :=UN_b手动模式中;
-    ast气缸[25].b自动    :=UN_b自动模式中;
-    ast气缸[25].b动点信号:=SPARE;
-    ast气缸[25].b原点信号:=SPARE;
-    SPARE := ast气缸[25].b动点输出;
-    SPARE := ast气缸[25].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[25].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[25].i命令:=4;
-    END_IF;
+REGION 气缸25
+ast气缸[25].s名称    :='气缸25';
+ast气缸[25].b动点条件:=TRUE;  
+ast气缸[25].b原点条件:=TRUE;
+ast气缸[25].i类型    :=0; //0:单控阀
+ast气缸[25].b急停    :=b急停;
+ast气缸[25].b暂停    :=b暂停;
+ast气缸[25].b复位    :=b复位;
+ast气缸[25].b手动    :=UN_b手动模式中;
+ast气缸[25].b自动    :=UN_b自动模式中;
+ast气缸[25].b动点信号:=SPARE;
+ast气缸[25].b原点信号:=SPARE;
+SPARE := ast气缸[25].b动点输出;
+SPARE := ast气缸[25].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[25].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[25].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸26
-IF TRUE THEN
-    ast气缸[26].s名称    :='气缸26';
-    ast气缸[26].b动点条件:=TRUE;  
-    ast气缸[26].b原点条件:=TRUE;
-    ast气缸[26].i类型    :=0; //0:单控阀
-    ast气缸[26].b急停    :=b急停;
-    ast气缸[26].b暂停    :=b暂停;
-    ast气缸[26].b复位    :=b复位;
-    ast气缸[26].b手动    :=UN_b手动模式中;
-    ast气缸[26].b自动    :=UN_b自动模式中;
-    ast气缸[26].b动点信号:=SPARE;
-    ast气缸[26].b原点信号:=SPARE;
-    SPARE := ast气缸[26].b动点输出;
-    SPARE := ast气缸[26].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[26].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[26].i命令:=4;
-    END_IF;
+REGION 气缸26
+ast气缸[26].s名称    :='气缸26';
+ast气缸[26].b动点条件:=TRUE;  
+ast气缸[26].b原点条件:=TRUE;
+ast气缸[26].i类型    :=0; //0:单控阀
+ast气缸[26].b急停    :=b急停;
+ast气缸[26].b暂停    :=b暂停;
+ast气缸[26].b复位    :=b复位;
+ast气缸[26].b手动    :=UN_b手动模式中;
+ast气缸[26].b自动    :=UN_b自动模式中;
+ast气缸[26].b动点信号:=SPARE;
+ast气缸[26].b原点信号:=SPARE;
+SPARE := ast气缸[26].b动点输出;
+SPARE := ast气缸[26].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[26].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[26].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸27
-IF TRUE THEN
-    ast气缸[27].s名称    :='气缸27';
-    ast气缸[27].b动点条件:=TRUE;  
-    ast气缸[27].b原点条件:=TRUE;
-    ast气缸[27].i类型    :=0; //0:单控阀
-    ast气缸[27].b急停    :=b急停;
-    ast气缸[27].b暂停    :=b暂停;
-    ast气缸[27].b复位    :=b复位;
-    ast气缸[27].b手动    :=UN_b手动模式中;
-    ast气缸[27].b自动    :=UN_b自动模式中;
-    ast气缸[27].b动点信号:=SPARE;
-    ast气缸[27].b原点信号:=SPARE;
-    SPARE := ast气缸[27].b动点输出;
-    SPARE := ast气缸[27].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[27].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[27].i命令:=4;
-    END_IF;
+REGION 气缸27
+ast气缸[27].s名称    :='气缸27';
+ast气缸[27].b动点条件:=TRUE;  
+ast气缸[27].b原点条件:=TRUE;
+ast气缸[27].i类型    :=0; //0:单控阀
+ast气缸[27].b急停    :=b急停;
+ast气缸[27].b暂停    :=b暂停;
+ast气缸[27].b复位    :=b复位;
+ast气缸[27].b手动    :=UN_b手动模式中;
+ast气缸[27].b自动    :=UN_b自动模式中;
+ast气缸[27].b动点信号:=SPARE;
+ast气缸[27].b原点信号:=SPARE;
+SPARE := ast气缸[27].b动点输出;
+SPARE := ast气缸[27].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[27].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[27].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸28
-IF TRUE THEN
-    ast气缸[28].s名称    :='气缸28';
-    ast气缸[28].b动点条件:=TRUE;  
-    ast气缸[28].b原点条件:=TRUE;
-    ast气缸[28].i类型    :=0; //0:单控阀
-    ast气缸[28].b急停    :=b急停;
-    ast气缸[28].b暂停    :=b暂停;
-    ast气缸[28].b复位    :=b复位;
-    ast气缸[28].b手动    :=UN_b手动模式中;
-    ast气缸[28].b自动    :=UN_b自动模式中;
-    ast气缸[28].b动点信号:=SPARE;
-    ast气缸[28].b原点信号:=SPARE;
-    SPARE := ast气缸[28].b动点输出;
-    SPARE := ast气缸[28].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[28].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[28].i命令:=4;
-    END_IF;
+REGION 气缸28
+ast气缸[28].s名称    :='气缸28';
+ast气缸[28].b动点条件:=TRUE;  
+ast气缸[28].b原点条件:=TRUE;
+ast气缸[28].i类型    :=0; //0:单控阀
+ast气缸[28].b急停    :=b急停;
+ast气缸[28].b暂停    :=b暂停;
+ast气缸[28].b复位    :=b复位;
+ast气缸[28].b手动    :=UN_b手动模式中;
+ast气缸[28].b自动    :=UN_b自动模式中;
+ast气缸[28].b动点信号:=SPARE;
+ast气缸[28].b原点信号:=SPARE;
+SPARE := ast气缸[28].b动点输出;
+SPARE := ast气缸[28].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[28].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[28].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸29
-IF TRUE THEN
-    ast气缸[29].s名称    :='气缸29';
-    ast气缸[29].b动点条件:=TRUE;  
-    ast气缸[29].b原点条件:=TRUE;
-    ast气缸[29].i类型    :=0; //0:单控阀
-    ast气缸[29].b急停    :=b急停;
-    ast气缸[29].b暂停    :=b暂停;
-    ast气缸[29].b复位    :=b复位;
-    ast气缸[29].b手动    :=UN_b手动模式中;
-    ast气缸[29].b自动    :=UN_b自动模式中;
-    ast气缸[29].b动点信号:=SPARE;
-    ast气缸[29].b原点信号:=SPARE;
-    SPARE := ast气缸[29].b动点输出;
-    SPARE := ast气缸[29].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[29].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[29].i命令:=4;
-    END_IF;
+REGION 气缸29
+ast气缸[29].s名称    :='气缸29';
+ast气缸[29].b动点条件:=TRUE;  
+ast气缸[29].b原点条件:=TRUE;
+ast气缸[29].i类型    :=0; //0:单控阀
+ast气缸[29].b急停    :=b急停;
+ast气缸[29].b暂停    :=b暂停;
+ast气缸[29].b复位    :=b复位;
+ast气缸[29].b手动    :=UN_b手动模式中;
+ast气缸[29].b自动    :=UN_b自动模式中;
+ast气缸[29].b动点信号:=SPARE;
+ast气缸[29].b原点信号:=SPARE;
+SPARE := ast气缸[29].b动点输出;
+SPARE := ast气缸[29].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[29].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[29].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸30
-IF TRUE THEN
-    ast气缸[30].s名称    :='气缸30';
-    ast气缸[30].b动点条件:=TRUE;  
-    ast气缸[30].b原点条件:=TRUE;
-    ast气缸[30].i类型    :=0; //0:单控阀
-    ast气缸[30].b急停    :=b急停;
-    ast气缸[30].b暂停    :=b暂停;
-    ast气缸[30].b复位    :=b复位;
-    ast气缸[30].b手动    :=UN_b手动模式中;
-    ast气缸[30].b自动    :=UN_b自动模式中;
-    ast气缸[30].b动点信号:=SPARE;
-    ast气缸[30].b原点信号:=SPARE;
-    SPARE := ast气缸[30].b动点输出;
-    SPARE := ast气缸[30].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[30].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[30].i命令:=4;
-    END_IF;
+REGION 气缸30
+ast气缸[30].s名称    :='气缸30';
+ast气缸[30].b动点条件:=TRUE;  
+ast气缸[30].b原点条件:=TRUE;
+ast气缸[30].i类型    :=0; //0:单控阀
+ast气缸[30].b急停    :=b急停;
+ast气缸[30].b暂停    :=b暂停;
+ast气缸[30].b复位    :=b复位;
+ast气缸[30].b手动    :=UN_b手动模式中;
+ast气缸[30].b自动    :=UN_b自动模式中;
+ast气缸[30].b动点信号:=SPARE;
+ast气缸[30].b原点信号:=SPARE;
+SPARE := ast气缸[30].b动点输出;
+SPARE := ast气缸[30].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[30].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[30].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸31
-IF TRUE THEN
-    ast气缸[31].s名称    :='气缸31';
-    ast气缸[31].b动点条件:=TRUE;  
-    ast气缸[31].b原点条件:=TRUE;
-    ast气缸[31].i类型    :=0; //0:单控阀
-    ast气缸[31].b急停    :=b急停;
-    ast气缸[31].b暂停    :=b暂停;
-    ast气缸[31].b复位    :=b复位;
-    ast气缸[31].b手动    :=UN_b手动模式中;
-    ast气缸[31].b自动    :=UN_b自动模式中;
-    ast气缸[31].b动点信号:=SPARE;
-    ast气缸[31].b原点信号:=SPARE;
-    SPARE := ast气缸[31].b动点输出;
-    SPARE := ast气缸[31].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[31].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[31].i命令:=4;
-    END_IF;
+REGION 气缸31
+ast气缸[31].s名称    :='气缸31';
+ast气缸[31].b动点条件:=TRUE;  
+ast气缸[31].b原点条件:=TRUE;
+ast气缸[31].i类型    :=0; //0:单控阀
+ast气缸[31].b急停    :=b急停;
+ast气缸[31].b暂停    :=b暂停;
+ast气缸[31].b复位    :=b复位;
+ast气缸[31].b手动    :=UN_b手动模式中;
+ast气缸[31].b自动    :=UN_b自动模式中;
+ast气缸[31].b动点信号:=SPARE;
+ast气缸[31].b原点信号:=SPARE;
+SPARE := ast气缸[31].b动点输出;
+SPARE := ast气缸[31].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[31].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[31].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸32
-IF TRUE THEN
-    ast气缸[32].s名称    :='气缸32';
-    ast气缸[32].b动点条件:=TRUE;  
-    ast气缸[32].b原点条件:=TRUE;
-    ast气缸[32].i类型    :=0; //0:单控阀
-    ast气缸[32].b急停    :=b急停;
-    ast气缸[32].b暂停    :=b暂停;
-    ast气缸[32].b复位    :=b复位;
-    ast气缸[32].b手动    :=UN_b手动模式中;
-    ast气缸[32].b自动    :=UN_b自动模式中;
-    ast气缸[32].b动点信号:=SPARE;
-    ast气缸[32].b原点信号:=SPARE;
-    SPARE := ast气缸[32].b动点输出;
-    SPARE := ast气缸[32].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[32].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[32].i命令:=4;
-    END_IF;
+REGION 气缸32
+ast气缸[32].s名称    :='气缸32';
+ast气缸[32].b动点条件:=TRUE;  
+ast气缸[32].b原点条件:=TRUE;
+ast气缸[32].i类型    :=0; //0:单控阀
+ast气缸[32].b急停    :=b急停;
+ast气缸[32].b暂停    :=b暂停;
+ast气缸[32].b复位    :=b复位;
+ast气缸[32].b手动    :=UN_b手动模式中;
+ast气缸[32].b自动    :=UN_b自动模式中;
+ast气缸[32].b动点信号:=SPARE;
+ast气缸[32].b原点信号:=SPARE;
+SPARE := ast气缸[32].b动点输出;
+SPARE := ast气缸[32].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[32].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[32].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸33
-IF TRUE THEN
-    ast气缸[33].s名称    :='气缸33';
-    ast气缸[33].b动点条件:=TRUE;  
-    ast气缸[33].b原点条件:=TRUE;
-    ast气缸[33].i类型    :=0; //0:单控阀
-    ast气缸[33].b急停    :=b急停;
-    ast气缸[33].b暂停    :=b暂停;
-    ast气缸[33].b复位    :=b复位;
-    ast气缸[33].b手动    :=UN_b手动模式中;
-    ast气缸[33].b自动    :=UN_b自动模式中;
-    ast气缸[33].b动点信号:=SPARE;
-    ast气缸[33].b原点信号:=SPARE;
-    SPARE := ast气缸[33].b动点输出;
-    SPARE := ast气缸[33].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[33].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[33].i命令:=4;
-    END_IF;
+REGION 气缸33
+ast气缸[33].s名称    :='气缸33';
+ast气缸[33].b动点条件:=TRUE;  
+ast气缸[33].b原点条件:=TRUE;
+ast气缸[33].i类型    :=0; //0:单控阀
+ast气缸[33].b急停    :=b急停;
+ast气缸[33].b暂停    :=b暂停;
+ast气缸[33].b复位    :=b复位;
+ast气缸[33].b手动    :=UN_b手动模式中;
+ast气缸[33].b自动    :=UN_b自动模式中;
+ast气缸[33].b动点信号:=SPARE;
+ast气缸[33].b原点信号:=SPARE;
+SPARE := ast气缸[33].b动点输出;
+SPARE := ast气缸[33].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[33].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[33].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸34
-IF TRUE THEN
-    ast气缸[34].s名称    :='气缸34';
-    ast气缸[34].b动点条件:=TRUE;  
-    ast气缸[34].b原点条件:=TRUE;
-    ast气缸[34].i类型    :=0; //0:单控阀
-    ast气缸[34].b急停    :=b急停;
-    ast气缸[34].b暂停    :=b暂停;
-    ast气缸[34].b复位    :=b复位;
-    ast气缸[34].b手动    :=UN_b手动模式中;
-    ast气缸[34].b自动    :=UN_b自动模式中;
-    ast气缸[34].b动点信号:=SPARE;
-    ast气缸[34].b原点信号:=SPARE;
-    SPARE := ast气缸[34].b动点输出;
-    SPARE := ast气缸[34].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[34].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[34].i命令:=4;
-    END_IF;
+REGION 气缸34
+ast气缸[34].s名称    :='气缸34';
+ast气缸[34].b动点条件:=TRUE;  
+ast气缸[34].b原点条件:=TRUE;
+ast气缸[34].i类型    :=0; //0:单控阀
+ast气缸[34].b急停    :=b急停;
+ast气缸[34].b暂停    :=b暂停;
+ast气缸[34].b复位    :=b复位;
+ast气缸[34].b手动    :=UN_b手动模式中;
+ast气缸[34].b自动    :=UN_b自动模式中;
+ast气缸[34].b动点信号:=SPARE;
+ast气缸[34].b原点信号:=SPARE;
+SPARE := ast气缸[34].b动点输出;
+SPARE := ast气缸[34].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[34].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[34].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸35
-IF TRUE THEN
-    ast气缸[35].s名称    :='气缸35';
-    ast气缸[35].b动点条件:=TRUE;  
-    ast气缸[35].b原点条件:=TRUE;
-    ast气缸[35].i类型    :=0; //0:单控阀
-    ast气缸[35].b急停    :=b急停;
-    ast气缸[35].b暂停    :=b暂停;
-    ast气缸[35].b复位    :=b复位;
-    ast气缸[35].b手动    :=UN_b手动模式中;
-    ast气缸[35].b自动    :=UN_b自动模式中;
-    ast气缸[35].b动点信号:=SPARE;
-    ast气缸[35].b原点信号:=SPARE;
-    SPARE := ast气缸[35].b动点输出;
-    SPARE := ast气缸[35].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[35].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[35].i命令:=4;
-    END_IF;
+REGION 气缸35
+ast气缸[35].s名称    :='气缸35';
+ast气缸[35].b动点条件:=TRUE;  
+ast气缸[35].b原点条件:=TRUE;
+ast气缸[35].i类型    :=0; //0:单控阀
+ast气缸[35].b急停    :=b急停;
+ast气缸[35].b暂停    :=b暂停;
+ast气缸[35].b复位    :=b复位;
+ast气缸[35].b手动    :=UN_b手动模式中;
+ast气缸[35].b自动    :=UN_b自动模式中;
+ast气缸[35].b动点信号:=SPARE;
+ast气缸[35].b原点信号:=SPARE;
+SPARE := ast气缸[35].b动点输出;
+SPARE := ast气缸[35].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[35].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[35].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸36
-IF TRUE THEN
-    ast气缸[36].s名称    :='气缸36';
-    ast气缸[36].b动点条件:=TRUE;  
-    ast气缸[36].b原点条件:=TRUE;
-    ast气缸[36].i类型    :=0; //0:单控阀
-    ast气缸[36].b急停    :=b急停;
-    ast气缸[36].b暂停    :=b暂停;
-    ast气缸[36].b复位    :=b复位;
-    ast气缸[36].b手动    :=UN_b手动模式中;
-    ast气缸[36].b自动    :=UN_b自动模式中;
-    ast气缸[36].b动点信号:=SPARE;
-    ast气缸[36].b原点信号:=SPARE;
-    SPARE := ast气缸[36].b动点输出;
-    SPARE := ast气缸[36].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[36].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[36].i命令:=4;
-    END_IF;
+REGION 气缸36
+ast气缸[36].s名称    :='气缸36';
+ast气缸[36].b动点条件:=TRUE;  
+ast气缸[36].b原点条件:=TRUE;
+ast气缸[36].i类型    :=0; //0:单控阀
+ast气缸[36].b急停    :=b急停;
+ast气缸[36].b暂停    :=b暂停;
+ast气缸[36].b复位    :=b复位;
+ast气缸[36].b手动    :=UN_b手动模式中;
+ast气缸[36].b自动    :=UN_b自动模式中;
+ast气缸[36].b动点信号:=SPARE;
+ast气缸[36].b原点信号:=SPARE;
+SPARE := ast气缸[36].b动点输出;
+SPARE := ast气缸[36].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[36].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[36].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸37
-IF TRUE THEN
-    ast气缸[37].s名称    :='气缸37';
-    ast气缸[37].b动点条件:=TRUE;  
-    ast气缸[37].b原点条件:=TRUE;
-    ast气缸[37].i类型    :=0; //0:单控阀
-    ast气缸[37].b急停    :=b急停;
-    ast气缸[37].b暂停    :=b暂停;
-    ast气缸[37].b复位    :=b复位;
-    ast气缸[37].b手动    :=UN_b手动模式中;
-    ast气缸[37].b自动    :=UN_b自动模式中;
-    ast气缸[37].b动点信号:=SPARE;
-    ast气缸[37].b原点信号:=SPARE;
-    SPARE := ast气缸[37].b动点输出;
-    SPARE := ast气缸[37].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[37].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[37].i命令:=4;
-    END_IF;
+REGION 气缸37
+ast气缸[37].s名称    :='气缸37';
+ast气缸[37].b动点条件:=TRUE;  
+ast气缸[37].b原点条件:=TRUE;
+ast气缸[37].i类型    :=0; //0:单控阀
+ast气缸[37].b急停    :=b急停;
+ast气缸[37].b暂停    :=b暂停;
+ast气缸[37].b复位    :=b复位;
+ast气缸[37].b手动    :=UN_b手动模式中;
+ast气缸[37].b自动    :=UN_b自动模式中;
+ast气缸[37].b动点信号:=SPARE;
+ast气缸[37].b原点信号:=SPARE;
+SPARE := ast气缸[37].b动点输出;
+SPARE := ast气缸[37].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[37].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[37].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸38
-IF TRUE THEN
-    ast气缸[38].s名称    :='气缸38';
-    ast气缸[38].b动点条件:=TRUE;  
-    ast气缸[38].b原点条件:=TRUE;
-    ast气缸[38].i类型    :=0; //0:单控阀
-    ast气缸[38].b急停    :=b急停;
-    ast气缸[38].b暂停    :=b暂停;
-    ast气缸[38].b复位    :=b复位;
-    ast气缸[38].b手动    :=UN_b手动模式中;
-    ast气缸[38].b自动    :=UN_b自动模式中;
-    ast气缸[38].b动点信号:=SPARE;
-    ast气缸[38].b原点信号:=SPARE;
-    SPARE := ast气缸[38].b动点输出;
-    SPARE := ast气缸[38].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[38].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[38].i命令:=4;
-    END_IF;
+REGION 气缸38
+ast气缸[38].s名称    :='气缸38';
+ast气缸[38].b动点条件:=TRUE;  
+ast气缸[38].b原点条件:=TRUE;
+ast气缸[38].i类型    :=0; //0:单控阀
+ast气缸[38].b急停    :=b急停;
+ast气缸[38].b暂停    :=b暂停;
+ast气缸[38].b复位    :=b复位;
+ast气缸[38].b手动    :=UN_b手动模式中;
+ast气缸[38].b自动    :=UN_b自动模式中;
+ast气缸[38].b动点信号:=SPARE;
+ast气缸[38].b原点信号:=SPARE;
+SPARE := ast气缸[38].b动点输出;
+SPARE := ast气缸[38].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[38].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[38].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸39
-IF TRUE THEN
-    ast气缸[39].s名称    :='气缸39';
-    ast气缸[39].b动点条件:=TRUE;  
-    ast气缸[39].b原点条件:=TRUE;
-    ast气缸[39].i类型    :=0; //0:单控阀
-    ast气缸[39].b急停    :=b急停;
-    ast气缸[39].b暂停    :=b暂停;
-    ast气缸[39].b复位    :=b复位;
-    ast气缸[39].b手动    :=UN_b手动模式中;
-    ast气缸[39].b自动    :=UN_b自动模式中;
-    ast气缸[39].b动点信号:=SPARE;
-    ast气缸[39].b原点信号:=SPARE;
-    SPARE := ast气缸[39].b动点输出;
-    SPARE := ast气缸[39].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[39].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[39].i命令:=4;
-    END_IF;
+REGION 气缸39
+ast气缸[39].s名称    :='气缸39';
+ast气缸[39].b动点条件:=TRUE;  
+ast气缸[39].b原点条件:=TRUE;
+ast气缸[39].i类型    :=0; //0:单控阀
+ast气缸[39].b急停    :=b急停;
+ast气缸[39].b暂停    :=b暂停;
+ast气缸[39].b复位    :=b复位;
+ast气缸[39].b手动    :=UN_b手动模式中;
+ast气缸[39].b自动    :=UN_b自动模式中;
+ast气缸[39].b动点信号:=SPARE;
+ast气缸[39].b原点信号:=SPARE;
+SPARE := ast气缸[39].b动点输出;
+SPARE := ast气缸[39].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[39].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[39].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸40
-IF TRUE THEN
-    ast气缸[40].s名称    :='气缸40';
-    ast气缸[40].b动点条件:=TRUE;  
-    ast气缸[40].b原点条件:=TRUE;
-    ast气缸[40].i类型    :=0; //0:单控阀
-    ast气缸[40].b急停    :=b急停;
-    ast气缸[40].b暂停    :=b暂停;
-    ast气缸[40].b复位    :=b复位;
-    ast气缸[40].b手动    :=UN_b手动模式中;
-    ast气缸[40].b自动    :=UN_b自动模式中;
-    ast气缸[40].b动点信号:=SPARE;
-    ast气缸[40].b原点信号:=SPARE;
-    SPARE := ast气缸[40].b动点输出;
-    SPARE := ast气缸[40].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[40].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[40].i命令:=4;
-    END_IF;
+REGION 气缸40
+ast气缸[40].s名称    :='气缸40';
+ast气缸[40].b动点条件:=TRUE;  
+ast气缸[40].b原点条件:=TRUE;
+ast气缸[40].i类型    :=0; //0:单控阀
+ast气缸[40].b急停    :=b急停;
+ast气缸[40].b暂停    :=b暂停;
+ast气缸[40].b复位    :=b复位;
+ast气缸[40].b手动    :=UN_b手动模式中;
+ast气缸[40].b自动    :=UN_b自动模式中;
+ast气缸[40].b动点信号:=SPARE;
+ast气缸[40].b原点信号:=SPARE;
+SPARE := ast气缸[40].b动点输出;
+SPARE := ast气缸[40].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[40].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[40].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸41
-IF TRUE THEN
-    ast气缸[41].s名称    :='气缸41';
-    ast气缸[41].b动点条件:=TRUE;  
-    ast气缸[41].b原点条件:=TRUE;
-    ast气缸[41].i类型    :=0; //0:单控阀
-    ast气缸[41].b急停    :=b急停;
-    ast气缸[41].b暂停    :=b暂停;
-    ast气缸[41].b复位    :=b复位;
-    ast气缸[41].b手动    :=UN_b手动模式中;
-    ast气缸[41].b自动    :=UN_b自动模式中;
-    ast气缸[41].b动点信号:=SPARE;
-    ast气缸[41].b原点信号:=SPARE;
-    SPARE := ast气缸[41].b动点输出;
-    SPARE := ast气缸[41].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[41].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[41].i命令:=4;
-    END_IF;
+REGION 气缸41
+ast气缸[41].s名称    :='气缸41';
+ast气缸[41].b动点条件:=TRUE;  
+ast气缸[41].b原点条件:=TRUE;
+ast气缸[41].i类型    :=0; //0:单控阀
+ast气缸[41].b急停    :=b急停;
+ast气缸[41].b暂停    :=b暂停;
+ast气缸[41].b复位    :=b复位;
+ast气缸[41].b手动    :=UN_b手动模式中;
+ast气缸[41].b自动    :=UN_b自动模式中;
+ast气缸[41].b动点信号:=SPARE;
+ast气缸[41].b原点信号:=SPARE;
+SPARE := ast气缸[41].b动点输出;
+SPARE := ast气缸[41].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[41].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[41].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸42
-IF TRUE THEN
-    ast气缸[42].s名称    :='气缸42';
-    ast气缸[42].b动点条件:=TRUE;  
-    ast气缸[42].b原点条件:=TRUE;
-    ast气缸[42].i类型    :=0; //0:单控阀
-    ast气缸[42].b急停    :=b急停;
-    ast气缸[42].b暂停    :=b暂停;
-    ast气缸[42].b复位    :=b复位;
-    ast气缸[42].b手动    :=UN_b手动模式中;
-    ast气缸[42].b自动    :=UN_b自动模式中;
-    ast气缸[42].b动点信号:=SPARE;
-    ast气缸[42].b原点信号:=SPARE;
-    SPARE := ast气缸[42].b动点输出;
-    SPARE := ast气缸[42].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[42].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[42].i命令:=4;
-    END_IF;
+REGION 气缸42
+ast气缸[42].s名称    :='气缸42';
+ast气缸[42].b动点条件:=TRUE;  
+ast气缸[42].b原点条件:=TRUE;
+ast气缸[42].i类型    :=0; //0:单控阀
+ast气缸[42].b急停    :=b急停;
+ast气缸[42].b暂停    :=b暂停;
+ast气缸[42].b复位    :=b复位;
+ast气缸[42].b手动    :=UN_b手动模式中;
+ast气缸[42].b自动    :=UN_b自动模式中;
+ast气缸[42].b动点信号:=SPARE;
+ast气缸[42].b原点信号:=SPARE;
+SPARE := ast气缸[42].b动点输出;
+SPARE := ast气缸[42].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[42].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[42].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸43
-IF TRUE THEN
-    ast气缸[43].s名称    :='气缸43';
-    ast气缸[43].b动点条件:=TRUE;  
-    ast气缸[43].b原点条件:=TRUE;
-    ast气缸[43].i类型    :=0; //0:单控阀
-    ast气缸[43].b急停    :=b急停;
-    ast气缸[43].b暂停    :=b暂停;
-    ast气缸[43].b复位    :=b复位;
-    ast气缸[43].b手动    :=UN_b手动模式中;
-    ast气缸[43].b自动    :=UN_b自动模式中;
-    ast气缸[43].b动点信号:=SPARE;
-    ast气缸[43].b原点信号:=SPARE;
-    SPARE := ast气缸[43].b动点输出;
-    SPARE := ast气缸[43].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[43].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[43].i命令:=4;
-    END_IF;
+REGION 气缸43
+ast气缸[43].s名称    :='气缸43';
+ast气缸[43].b动点条件:=TRUE;  
+ast气缸[43].b原点条件:=TRUE;
+ast气缸[43].i类型    :=0; //0:单控阀
+ast气缸[43].b急停    :=b急停;
+ast气缸[43].b暂停    :=b暂停;
+ast气缸[43].b复位    :=b复位;
+ast气缸[43].b手动    :=UN_b手动模式中;
+ast气缸[43].b自动    :=UN_b自动模式中;
+ast气缸[43].b动点信号:=SPARE;
+ast气缸[43].b原点信号:=SPARE;
+SPARE := ast气缸[43].b动点输出;
+SPARE := ast气缸[43].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[43].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[43].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸44
-IF TRUE THEN
-    ast气缸[44].s名称    :='气缸44';
-    ast气缸[44].b动点条件:=TRUE;  
-    ast气缸[44].b原点条件:=TRUE;
-    ast气缸[44].i类型    :=0; //0:单控阀
-    ast气缸[44].b急停    :=b急停;
-    ast气缸[44].b暂停    :=b暂停;
-    ast气缸[44].b复位    :=b复位;
-    ast气缸[44].b手动    :=UN_b手动模式中;
-    ast气缸[44].b自动    :=UN_b自动模式中;
-    ast气缸[44].b动点信号:=SPARE;
-    ast气缸[44].b原点信号:=SPARE;
-    SPARE := ast气缸[44].b动点输出;
-    SPARE := ast气缸[44].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[44].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[44].i命令:=4;
-    END_IF;
+REGION 气缸44
+ast气缸[44].s名称    :='气缸44';
+ast气缸[44].b动点条件:=TRUE;  
+ast气缸[44].b原点条件:=TRUE;
+ast气缸[44].i类型    :=0; //0:单控阀
+ast气缸[44].b急停    :=b急停;
+ast气缸[44].b暂停    :=b暂停;
+ast气缸[44].b复位    :=b复位;
+ast气缸[44].b手动    :=UN_b手动模式中;
+ast气缸[44].b自动    :=UN_b自动模式中;
+ast气缸[44].b动点信号:=SPARE;
+ast气缸[44].b原点信号:=SPARE;
+SPARE := ast气缸[44].b动点输出;
+SPARE := ast气缸[44].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[44].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[44].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸45
-IF TRUE THEN
-    ast气缸[45].s名称    :='气缸45';
-    ast气缸[45].b动点条件:=TRUE;  
-    ast气缸[45].b原点条件:=TRUE;
-    ast气缸[45].i类型    :=0; //0:单控阀
-    ast气缸[45].b急停    :=b急停;
-    ast气缸[45].b暂停    :=b暂停;
-    ast气缸[45].b复位    :=b复位;
-    ast气缸[45].b手动    :=UN_b手动模式中;
-    ast气缸[45].b自动    :=UN_b自动模式中;
-    ast气缸[45].b动点信号:=SPARE;
-    ast气缸[45].b原点信号:=SPARE;
-    SPARE := ast气缸[45].b动点输出;
-    SPARE := ast气缸[45].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[45].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[45].i命令:=4;
-    END_IF;
+REGION 气缸45
+ast气缸[45].s名称    :='气缸45';
+ast气缸[45].b动点条件:=TRUE;  
+ast气缸[45].b原点条件:=TRUE;
+ast气缸[45].i类型    :=0; //0:单控阀
+ast气缸[45].b急停    :=b急停;
+ast气缸[45].b暂停    :=b暂停;
+ast气缸[45].b复位    :=b复位;
+ast气缸[45].b手动    :=UN_b手动模式中;
+ast气缸[45].b自动    :=UN_b自动模式中;
+ast气缸[45].b动点信号:=SPARE;
+ast气缸[45].b原点信号:=SPARE;
+SPARE := ast气缸[45].b动点输出;
+SPARE := ast气缸[45].b原点输出;
+IF SPARE THEN //TO WORK
+    ast气缸[45].i命令:=3; 
 END_IF;
+IF SPARE THEN //TO HOME
+    ast气缸[45].i命令:=4;
+END_IF;
+END_REGION
 
-// 气缸46
-IF TRUE THEN
-    ast气缸[46].s名称    :='气缸46';
-    ast气缸[46].b动点条件:=TRUE;  
-    ast气缸[46].b原点条件:=TRUE;
-    ast气缸[46].i类型    :=0; //0:单控阀
-    ast气缸[46].b急停    :=b急停;
-    ast气缸[46].b暂停    :=b暂停;
-    ast气缸[46].b复位    :=b复位;
-    ast气缸[46].b手动    :=UN_b手动模式中;
-    ast气缸[46].b自动    :=UN_b自动模式中;
-    ast气缸[46].b动点信号:=SPARE;
-    ast气缸[46].b原点信号:=SPARE;
-    SPARE := ast气缸[46].b动点输出;
-    SPARE := ast气缸[46].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[46].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[46].i命令:=4;
-    END_IF;
-END_IF;
-
-// 气缸47
-IF TRUE THEN
-    ast气缸[47].s名称    :='气缸47';
-    ast气缸[47].b动点条件:=TRUE;  
-    ast气缸[47].b原点条件:=TRUE;
-    ast气缸[47].i类型    :=0; //0:单控阀
-    ast气缸[47].b急停    :=b急停;
-    ast气缸[47].b暂停    :=b暂停;
-    ast气缸[47].b复位    :=b复位;
-    ast气缸[47].b手动    :=UN_b手动模式中;
-    ast气缸[47].b自动    :=UN_b自动模式中;
-    ast气缸[47].b动点信号:=SPARE;
-    ast气缸[47].b原点信号:=SPARE;
-    SPARE := ast气缸[47].b动点输出;
-    SPARE := ast气缸[47].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[47].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[47].i命令:=4;
-    END_IF;
-END_IF;
-
-// 气缸48
-IF TRUE THEN
-    ast气缸[48].s名称    :='气缸48';
-    ast气缸[48].b动点条件:=TRUE;  
-    ast气缸[48].b原点条件:=TRUE;
-    ast气缸[48].i类型    :=0; //0:单控阀
-    ast气缸[48].b急停    :=b急停;
-    ast气缸[48].b暂停    :=b暂停;
-    ast气缸[48].b复位    :=b复位;
-    ast气缸[48].b手动    :=UN_b手动模式中;
-    ast气缸[48].b自动    :=UN_b自动模式中;
-    ast气缸[48].b动点信号:=SPARE;
-    ast气缸[48].b原点信号:=SPARE;
-    SPARE := ast气缸[48].b动点输出;
-    SPARE := ast气缸[48].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[48].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[48].i命令:=4;
-    END_IF;
-END_IF;
-
-// 气缸49
-IF TRUE THEN
-    ast气缸[49].s名称    :='气缸49';
-    ast气缸[49].b动点条件:=TRUE;  
-    ast气缸[49].b原点条件:=TRUE;
-    ast气缸[49].i类型    :=0; //0:单控阀
-    ast气缸[49].b急停    :=b急停;
-    ast气缸[49].b暂停    :=b暂停;
-    ast气缸[49].b复位    :=b复位;
-    ast气缸[49].b手动    :=UN_b手动模式中;
-    ast气缸[49].b自动    :=UN_b自动模式中;
-    ast气缸[49].b动点信号:=SPARE;
-    ast气缸[49].b原点信号:=SPARE;
-    SPARE := ast气缸[49].b动点输出;
-    SPARE := ast气缸[49].b原点输出;
-    IF SPARE THEN //TO WORK
-        ast气缸[49].i命令:=3; 
-    END_IF;
-    IF SPARE THEN //TO HOME
-        ast气缸[49].i命令:=4;
-    END_IF;
-END_IF;
+END_REGION
