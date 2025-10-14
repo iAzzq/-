@@ -1,5 +1,6 @@
 
-IF TRUE THEN
+REGION 气缸
+	
 	Fast气缸_C_1(IO_st气缸  := ast气缸[1]);
     Fast气缸_C_2(IO_st气缸  := ast气缸[2]);
     Fast气缸_C_3(IO_st气缸  := ast气缸[3]);
@@ -50,13 +51,12 @@ IF TRUE THEN
     Fast气缸_C_48(IO_st气缸 := ast气缸[48]);
     Fast气缸_C_49(IO_st气缸 := ast气缸[49]);
 	 
-END_IF;
+END_REGION
 
 
----------------------------------------------------------
 
+REGION 轴
 
-IF TRUE THEN
 
 Fast轴_C_1(IO_st轴 := ast轴[1], IO_sys轴 := AXIS_1);
 Fast轴_C_2(IO_st轴 := ast轴[2], IO_sys轴 := AXIS_2);
@@ -78,10 +78,10 @@ Fast轴_C_17(IO_st轴 := ast轴[17], IO_sys轴 := AXIS_17);
 Fast轴_C_18(IO_st轴 := ast轴[18], IO_sys轴 := AXIS_18);
 Fast轴_C_19(IO_st轴 := ast轴[19], IO_sys轴 := AXIS_19);
 
-END_IF;
+END_REGION
 
-//FP_C_1(InStep := PP[1]);
-IF TRUE THEN
+
+REGION step
 
 //PP1
 FP_C_1.RunFlag := not b暂停;
@@ -358,12 +358,7 @@ FP_C_68(InStep := PP[68]);
 //PP69
 FP_C_69.RunFlag := not b暂停;
 FP_C_69(InStep := PP[69]);
-(*
-//PP70
-FP_C_70.RunFlag := not b暂停;
-FP_C_70(InStep := PP[70]);*)
-	; 
-ELSE
-	; 
-END_IF;
+
+END_REGION
+
 
