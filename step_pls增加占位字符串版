@@ -1,6 +1,6 @@
 pp1 左装胎 0.5装胎开始 1转入2到放胎位3定型4送5到等待位6转出7无胎8取胎9到取胎位10夹11到等待位12有胎
 
-
+REGION PP[1]左装胎
 
 // ==================== PP[1] ====================
 // PP[1] - 左装胎控制功能块
@@ -127,3 +127,5 @@ CASE PP[1].StepNo OF
         PP[1].NextStepNo := 0;
         PP[1].Condition := NOT CMD_START[1];
 END_CASE;
+
+END_REGION
